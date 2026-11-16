@@ -1,7 +1,8 @@
-/* design-v4.3 · progressive enhancement only: the page is complete without this file */
+/* design-v4.4 · progressive enhancement only: the page is complete without this file */
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+  /* design-v4.4 */
   /* mobile menu */
   const mb = $('.menu-btn'), mn = $('#mnav');
   if (mb && mn) {
@@ -10,12 +11,23 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mn.hidden) { mn.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.focus(); } });
   }
 
-  /* scroll reveals: one restrained motion per section (CSS decides what moves) */
+  /* sticky header: logo 120px at the top, 72px once the page scrolls (desktop; CSS keeps 120px on mobile) */
+  const hdr = $('.hdr');
+  if (hdr) { const hs = () => hdr.classList.toggle('small', scrollY > 40); addEventListener('scroll', hs, { passive: true }); hs(); }
+
+  /* fade-up on scroll for section headings and cards (12-16px, ~500ms). The hidden state is enabled only here,
+     by adding html.rv-on, so with JS off nothing is ever hidden. Skipped entirely with prefers-reduced-motion. */
   const rev = $$('[data-reveal]');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-    rev.forEach(el => io.observe(el));
-  } else rev.forEach(el => el.classList.add('in'));
+  const RV = '[data-reveal] .kicker, [data-reveal] .h2, [data-reveal] .intro, .about p.body, .since-frame, .p-head .more, .pcard, .p-row li, .svc, .svc-cta, .client';
+  const items = $$(RV);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  if ('IntersectionObserver' in window && !reduce.matches) {
+    items.forEach(el => { el.classList.add('rv'); const sib = el.parentElement ? [...el.parentElement.children].filter(c => c.matches(RV)) : []; const k = Math.max(0, sib.indexOf(el)); el.style.setProperty('--rv-d', Math.min(k, 5) * 80 + 'ms'); });
+    document.documentElement.classList.add('rv-on');
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    rev.concat(items).forEach(el => io.observe(el));
+    reduce.addEventListener && reduce.addEventListener('change', () => { if (reduce.matches) items.forEach(el => el.classList.add('in')); });
+  } else rev.concat(items).forEach(el => el.classList.add('in'));
 
   const still = () => document.documentElement.classList.contains('a11y-still');   // v4.3 accessibility menu
   const motionOK = matchMedia('(prefers-reduced-motion: no-preference)').matches;
@@ -40,54 +52,81 @@
     }
   }
 
-  /* branches: the shared line draws with scroll progress; it never retracts */
-  const line = $('[data-scrub]');
-  if (line && motionOK) {
-    let p = 0, tick = false;
-    const paint = () => {
-      tick = false;
-      if (still()) { p = 1; line.style.setProperty('--p', '1'); line.classList.add('done'); return; }
-      const r = line.parentElement.getBoundingClientRect(), vh = innerHeight;
-      const q = Math.min(1, Math.max(0, (vh - (r.top + r.height / 2)) / (vh * 0.45)));
-      if (q > p) { p = q; line.style.setProperty('--p', p.toFixed(3)); if (p >= 0.98) line.classList.add('done'); }
-    };
-    addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(paint); } }, { passive: true });
-    document.addEventListener('a11y:change', paint);
-    paint();
-  }
-
+  /* optional partner: show the chosen partner's photo (same files as the cards); nothing for people without a photo */
   const topic = $('#f-topic');
-  $$('[data-topic]').forEach(a => a.addEventListener('click', () => {
-    const opt = [...topic.options].find(o => o.text === a.dataset.topic);
-    if (opt) { topic.value = opt.value || opt.text; topic.dispatchEvent(new Event('change')); }
-  }));
-
-  /* optional partner: show the chosen partner's photo (same files as the cards) or the caption square */
   const ps = $('#f-partner'), pp = $('#f-partner-pic');
   if (ps && pp) ps.addEventListener('change', () => {
     const o = ps.selectedOptions[0];
     pp.textContent = ''; pp.classList.remove('on');
-    if (!ps.value) return;
-    if (o.dataset.photo) { const im = new Image(); im.alt = ''; im.width = 800; im.height = 1000; im.src = 'assets/' + o.dataset.photo + '.jpg'; pp.appendChild(im); }
-    else { const d = document.createElement('div'); d.className = 'ph-empty'; d.innerHTML = '<span>תמונה תתווסף בהמשך</span>'; pp.appendChild(d); }
+    if (!ps.value || !o.dataset.photo) return;
+    const im = new Image(); im.alt = ''; im.width = 800; im.height = 1000; im.src='assets/' + o.dataset.photo + '.jpg'; pp.appendChild(im);
     void pp.offsetWidth; pp.classList.add('on');
   });
 
-  const wa = $('#f-wa');
-  if (wa) {
-    const base = wa.getAttribute('href').split('?')[0];
-    const upd = () => { const t = topic.value ? topic.selectedOptions[0].text : ''; wa.href = base + '?text=' + encodeURIComponent(t ? 'שלום, אשמח לתאם פגישה בנושא: ' + t : 'שלום, אשמח לתאם פגישה.'); };
-    topic.addEventListener('change', upd); upd();
-  }
+  const was = $$('a[href*="wa.me"]');
+  const waText = () => { const t = topic && topic.value ? topic.selectedOptions[0].text : ''; return t ? 'שלום, אשמח לתאם פגישה בנושא: ' + t : 'שלום, אשמח לתאם פגישה.'; };
+  const waUpd = () => was.forEach(a => { const base = a.getAttribute('href').split('?')[0]; a.href = base + '?text=' + encodeURIComponent(waText()); });
+  if (topic) topic.addEventListener('change', waUpd);
+  waUpd();
 
+  const LEAD_CONFIG = {
+    provider: 'none',              // 'none' | 'web3forms' | 'resend'
+    to: 'office@hwcpa.co.il',
+    web3formsKey: '',
+    resendEndpoint: '/api/lead'
+  };
+  const buildLead = form => {
+    const v = n => (form.elements[n] && form.elements[n].value || '').trim();
+    const pSel = form.elements.partner, partner = pSel && pSel.value ? pSel.selectedOptions[0].text : '';
+    const branch = v('branch'), tp = v('topic');
+    return { to: LEAD_CONFIG.to, subject: `פנייה מהאתר · ${branch} · ${tp}`,
+             name: v('name'), phone: v('phone'), email: v('email'), branch, topic: tp, partner, consent: !!(form.elements.consent && form.elements.consent.checked) };
+  };
+  const sendLead = async lead => {
+    if (LEAD_CONFIG.provider === 'web3forms' && LEAD_CONFIG.web3formsKey) {
+      const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ access_key: LEAD_CONFIG.web3formsKey, subject: lead.subject, from_name: lead.name, email: lead.email,
+          'טלפון': lead.phone, 'סניף': lead.branch, 'נושא': lead.topic, 'שותף': lead.partner || 'ללא העדפה' }) });
+      return { ok: r.ok, preview: false };
+    }
+    if (LEAD_CONFIG.provider === 'resend') {
+      const r = await fetch(LEAD_CONFIG.resendEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead) });
+      return { ok: r.ok, preview: false };
+    }
+    console.info('[preview] no form provider connected; nothing was sent. Would-be payload:', lead);
+    return { ok: true, preview: true };
+  };
+  window.hwLead = { config: LEAD_CONFIG, build: buildLead, send: sendLead };
+
+  /* form: validation with specific messages; all invalid fields are marked (tester bugs 10, 11) */
   const f = $('#contact-form'), st = $('#form-status');
-  f.addEventListener('submit', e => {
+  $$('[data-needs-js]', f).forEach(b => { b.disabled = false; b.removeAttribute('data-needs-js'); });
+  const PHONE_RE = /^[0-9+()\- ]{9,15}$/;
+  const label = el => (el.labels && el.labels[0] && el.labels[0].textContent.replace('(לא חובה)', '').trim()) || 'אישור מדיניות הפרטיות';
+  const problem = el => {
+    if (el.type === 'checkbox') return el.checked ? '' : 'יש לאשר את מדיניות הפרטיות';
+    const val = el.value.trim();
+    if (!val) return 'נא למלא את השדה: ' + label(el);
+    if (el.type === 'email' && !el.checkValidity()) return 'כתובת המייל לא תקינה';
+    if (el.type === 'tel' && (!PHONE_RE.test(val) || (val.match(/\d/g) || []).length < 9)) return 'מספר הטלפון לא תקין';
+    return '';
+  };
+  f.addEventListener('submit', async e => {
     e.preventDefault();
-    const bad = $$('[required]', f).find(el => el.type === 'checkbox' ? !el.checked : !el.value.trim() || !el.checkValidity());
-    $$('[aria-invalid]', f).forEach(el => { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });   // v4.3 a11y
-    if (bad) { st.textContent = 'נא למלא את השדה: ' + ((bad.labels && bad.labels[0] && bad.labels[0].textContent.trim()) || 'אישור מדיניות הפרטיות'); bad.setAttribute('aria-invalid', 'true'); bad.setAttribute('aria-describedby', 'form-status'); bad.focus(); return; }
+    $$('[aria-invalid]', f).forEach(el => { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });
+    const bad = $$('[required]', f).map(el => [el, problem(el)]).filter(x => x[1]);
+    if (bad.length) {
+      bad.forEach(([el]) => { el.setAttribute('aria-invalid', 'true'); el.setAttribute('aria-describedby', 'form-status'); });
+      st.textContent = bad.map(x => x[1]).join('. ') + '.';
+      bad[0][0].focus(); return;
+    }
     st.textContent = '';
-    const done = $('#form-done'); done.hidden = true; void done.offsetWidth; done.hidden = false;
+    const lead = buildLead(f);
+    let res; try { res = await sendLead(lead); } catch (err) { res = { ok: false }; }
+    const done = $('#form-done');
+    if (!res.ok) { st.textContent = 'השליחה לא הצליחה. אפשר לנסות שוב, או לכתוב ל־' + LEAD_CONFIG.to + '.'; return; }
+    if (!res.preview) { $('#form-done-h').textContent = 'תודה, הפנייה נשלחה.'; $('#form-done-t').textContent = 'נחזור אליכם בהקדם.'; }
+    done.hidden = true; void done.offsetWidth; done.hidden = false;
     done.setAttribute('tabindex', '-1'); done.focus({ preventScroll: false });
   });
 

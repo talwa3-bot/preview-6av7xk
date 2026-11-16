@@ -13,7 +13,7 @@
     root.classList.toggle('a11y-links', !!st.links);
     root.classList.toggle('a11y-still', !!st.still);
     root.classList.toggle('a11y-font', !!st.font);
-    if (st.still) document.querySelectorAll('[data-reveal]').forEach(e => e.classList.add('in'));
+    if (st.still) document.querySelectorAll('[data-reveal], .rv').forEach(e => e.classList.add('in'));
     document.dispatchEvent(new CustomEvent('a11y:change'));
   };
   const stmt = document.querySelector('meta[name="a11y-statement"]');

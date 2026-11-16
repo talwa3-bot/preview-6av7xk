@@ -5,21 +5,25 @@
       Browsers don't scroll a partly-visible element on focus, so scroll-padding alone isn't enough. */
 (() => {
   const TEL = {
-    'petah-tikva':    ['+972732741700', '073-274-1700', 'המשרד בפתח תקווה'],
-    'kiryat-malachi': ['+972732741699', '073-274-1699', 'סניף קריית מלאכי']
+    'petah-tikva':    ['+972732741700', 'למשרד בפתח תקווה'],
+    'kiryat-malachi': ['+972732741699', 'לסניף קריית מלאכי']
   };
   const bar = document.querySelector('.action-bar');
   if (!bar) return;
   const t = TEL[bar.dataset.branch] || TEL['petah-tikva'];
   const call = bar.querySelector('a[data-call]') || bar.querySelector('a[href^="tel:"]');
   if (call) {
-    call.href = 'tel:' + t[0];
-    /* WCAG 2.5.3 label-in-name: the accessible name always STARTS with the visible text,
-       whatever the template shows ("חיוג למשרד" or "חיוג 073-274-1700"); only missing details are appended. */
+    call.href='tel:' + t[0];
+    /* WCAG 2.5.3 label-in-name: the accessible name STARTS with the visible text ("התקשרו").
+       v4.4: no phone digits in the name either (Tal's rule; gates.py checks aria-labels too). */
     const vis = call.textContent.replace(/\s+/g, ' ').trim();
-    const extra = [t[1], t[2]].filter(x => !vis.includes(x)).join(', ');
-    call.setAttribute('aria-label', extra ? vis + ', ' + extra : vis);
+    call.setAttribute('aria-label', vis.includes(t[1]) ? vis : vis + ' ' + t[1]);
   }
+  /* v4.4 (reflow, WCAG 1.4.10): with large text the bar may wrap to more rows; page padding and the
+     accessibility button follow its real height */
+  const fit = () => { if (getComputedStyle(bar).display === 'none') return; document.documentElement.style.setProperty('--actionbar-h', Math.max(64, Math.round(bar.getBoundingClientRect().height)) + 'px'); };
+  if ('ResizeObserver' in window) new ResizeObserver(fit).observe(bar); else addEventListener('resize', fit);
+  document.addEventListener('a11y:change', fit); fit();
   document.addEventListener('focusin', e => {
     const el = e.target;
     if (bar.contains(el) || getComputedStyle(bar).display === 'none') return;
