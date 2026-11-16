@@ -512,3 +512,6 @@ html.a11y-fs .btn{height:auto;min-height:52px;padding-block:.45em;text-align:cen
 .sec-note svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--navy-800)}
 .sec-note .ph{margin-inline-start:6px}
 html.a11y-hc .sec-note svg{color:#fff}
+
+.wa-link,a[href*="wa.me"]{display:inline-flex;align-items:center;gap:.4em}
+.wa-ico{flex:none;width:1.15em;height:1.15em}
