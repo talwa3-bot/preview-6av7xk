@@ -5,8 +5,8 @@
       Browsers don't scroll a partly-visible element on focus, so scroll-padding alone isn't enough. */
 (() => {
   const TEL = {
-    'petah-tikva':    ['+972732741700', 'למשרד בפתח תקווה'],
-    'kiryat-malachi': ['+972732741699', 'לסניף קריית מלאכי']
+    'petah-tikva':    ['+972732741700', 'למשרד בפתח תקווה']
+    /* Kiryat Malachi: no call link until Tal verifies the number (manager decision 16.11); WhatsApp + form instead */
   };
   const bar = document.querySelector('.action-bar');
   if (!bar) return;

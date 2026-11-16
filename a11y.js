@@ -17,7 +17,7 @@
     document.dispatchEvent(new CustomEvent('a11y:change'));
   };
   const stmt = document.querySelector('meta[name="a11y-statement"]');
-  const href = stmt ? stmt.content : 'accessibility.html';
+  const href = stmt ? stmt.content : '/accessibility.html';
   const wrap = document.createElement('div');
   wrap.className = 'a11y';
   wrap.innerHTML = `

@@ -22,11 +22,19 @@
   const items = $$(RV);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   if ('IntersectionObserver' in window && !reduce.matches) {
-    items.forEach(el => { el.classList.add('rv'); const sib = el.parentElement ? [...el.parentElement.children].filter(c => c.matches(RV)) : []; const k = Math.max(0, sib.indexOf(el)); el.style.setProperty('--rv-d', Math.min(k, 5) * 80 + 'ms'); });
+    /* B8: nothing in the first 1.5 screens is ever hidden (LCP must not wait for a fade) */
+    const fold = innerHeight * 1.5;
+    items.filter(el => el.getBoundingClientRect().top < fold).forEach(el => el.classList.add('in'));
+    items.filter(el => !el.classList.contains('in')).forEach(el => { el.classList.add('rv'); const sib = el.parentElement ? [...el.parentElement.children].filter(c => c.matches(RV)) : []; const k = Math.max(0, sib.indexOf(el)); el.style.setProperty('--rv-d', Math.min(k, 5) * 80 + 'ms'); });
     document.documentElement.classList.add('rv-on');
-    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0, rootMargin: '0px 0px 10% 0px' });
     rev.concat(items).forEach(el => io.observe(el));
-    reduce.addEventListener && reduce.addEventListener('change', () => { if (reduce.matches) items.forEach(el => el.classList.add('in')); });
+    const showAll = () => items.forEach(el => el.classList.add('in'));
+    reduce.addEventListener && reduce.addEventListener('change', () => { if (reduce.matches) showAll(); });
+    /* B11: safety reveal, so screenshot/preview tools that never scroll still see everything */
+    const safety = () => setTimeout(showAll, 2500);
+    if (document.readyState === 'complete') safety(); else addEventListener('load', safety, { once: true });
+    addEventListener('beforeprint', showAll);
   } else rev.concat(items).forEach(el => el.classList.add('in'));
 
   const still = () => document.documentElement.classList.contains('a11y-still');   // v4.3 accessibility menu
@@ -63,6 +71,17 @@
     void pp.offsetWidth; pp.classList.add('on');
   });
 
+  /* (c) service-card titles preselect the topic (plain #contact anchors without JS); "טופס פנייה" for KM preselects the branch */
+  $$('[data-topic]').forEach(a => a.addEventListener('click', () => {
+    const opt = topic && [...topic.options].find(o => o.text === a.dataset.topic);
+    if (opt) { topic.value = opt.value || opt.text; topic.dispatchEvent(new Event('change')); }
+  }));
+  const bsel = $('#f-branch');
+  $$('[data-branch]').filter(a => a.tagName === 'A').forEach(a => a.addEventListener('click', () => {
+    const opt = bsel && [...bsel.options].find(o => o.text === a.dataset.branch);
+    if (opt) { bsel.value = opt.value || opt.text; bsel.dispatchEvent(new Event('change')); }
+  }));
+
   const was = $$('a[href*="wa.me"]');
   const waText = () => { const t = topic && topic.value ? topic.selectedOptions[0].text : ''; return t ? 'שלום, אשמח לתאם פגישה בנושא: ' + t : 'שלום, אשמח לתאם פגישה.'; };
   const waUpd = () => was.forEach(a => { const base = a.getAttribute('href').split('?')[0]; a.href = base + '?text=' + encodeURIComponent(waText()); });
@@ -80,20 +99,28 @@
     const pSel = form.elements.partner, partner = pSel && pSel.value ? pSel.selectedOptions[0].text : '';
     const branch = v('branch'), tp = v('topic');
     return { to: LEAD_CONFIG.to, subject: `פנייה מהאתר · ${branch} · ${tp}`,
-             name: v('name'), phone: v('phone'), email: v('email'), branch, topic: tp, partner, consent: !!(form.elements.consent && form.elements.consent.checked) };
+             name: v('name'), phone: v('phone'), email: v('email'), branch, topic: tp, partner, consent: !!(form.elements.consent && form.elements.consent.checked),
+             botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked) };
   };
   const sendLead = async lead => {
-    if (LEAD_CONFIG.provider === 'web3forms' && LEAD_CONFIG.web3formsKey) {
+    const P = LEAD_CONFIG.provider;
+    /* B3: a provider that is chosen but not configured is an ERROR (visible, data kept), never a silent "preview" */
+    if ((P === 'web3forms' && !LEAD_CONFIG.web3formsKey) || (P === 'resend' && !LEAD_CONFIG.resendEndpoint) || !['none', 'web3forms', 'resend'].includes(P)) {
+      console.error('[lead] provider "' + P + '" is not configured; nothing was sent');
+      return { ok: false, preview: false };
+    }
+    if (P === 'web3forms') {
       const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ access_key: LEAD_CONFIG.web3formsKey, subject: lead.subject, from_name: lead.name, email: lead.email,
-          'טלפון': lead.phone, 'סניף': lead.branch, 'נושא': lead.topic, 'שותף': lead.partner || 'ללא העדפה' }) });
+          'טלפון': lead.phone, 'סניף': lead.branch, 'נושא': lead.topic, 'שותף': lead.partner || 'ללא העדפה', botcheck: lead.botcheck }) });
       return { ok: r.ok, preview: false };
     }
-    if (LEAD_CONFIG.provider === 'resend') {
+    if (P === 'resend') {
       const r = await fetch(LEAD_CONFIG.resendEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead) });
       return { ok: r.ok, preview: false };
     }
-    console.info('[preview] no form provider connected; nothing was sent. Would-be payload:', lead);
+    /* B6: no personal data in the console; field names only */
+    console.info('[preview] no form provider connected; nothing was sent. Fields: ' + Object.keys(lead).join(', '));
     return { ok: true, preview: true };
   };
   window.hwLead = { config: LEAD_CONFIG, build: buildLead, send: sendLead };
@@ -101,13 +128,14 @@
   /* form: validation with specific messages; all invalid fields are marked (tester bugs 10, 11) */
   const f = $('#contact-form'), st = $('#form-status');
   $$('[data-needs-js]', f).forEach(b => { b.disabled = false; b.removeAttribute('data-needs-js'); });
-  const PHONE_RE = /^[0-9+()\- ]{9,15}$/;
+  let inFlight = false; const sendBtn = $('button[type=submit]', f);
+  const PHONE_RE = /^[0-9+()\- ]{9,15}$/, EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;   // same rules in api/lead.js
   const label = el => (el.labels && el.labels[0] && el.labels[0].textContent.replace('(לא חובה)', '').trim()) || 'אישור מדיניות הפרטיות';
   const problem = el => {
     if (el.type === 'checkbox') return el.checked ? '' : 'יש לאשר את מדיניות הפרטיות';
     const val = el.value.trim();
     if (!val) return 'נא למלא את השדה: ' + label(el);
-    if (el.type === 'email' && !el.checkValidity()) return 'כתובת המייל לא תקינה';
+    if (el.type === 'email' && (!el.checkValidity() || !EMAIL_RE.test(val))) return 'כתובת המייל לא תקינה';
     if (el.type === 'tel' && (!PHONE_RE.test(val) || (val.match(/\d/g) || []).length < 9)) return 'מספר הטלפון לא תקין';
     return '';
   };
@@ -120,12 +148,18 @@
       st.textContent = bad.map(x => x[1]).join('. ') + '.';
       bad[0][0].focus(); return;
     }
+    if (inFlight) return;                         // B5: one lead per submit, even on double click
     st.textContent = '';
     const lead = buildLead(f);
-    let res; try { res = await sendLead(lead); } catch (err) { res = { ok: false }; }
     const done = $('#form-done');
-    if (!res.ok) { st.textContent = 'השליחה לא הצליחה. אפשר לנסות שוב, או לכתוב ל־' + LEAD_CONFIG.to + '.'; return; }
-    if (!res.preview) { $('#form-done-h').textContent = 'תודה, הפנייה נשלחה.'; $('#form-done-t').textContent = 'נחזור אליכם בהקדם.'; }
+    if (lead.botcheck) { done.hidden = false; return; }   // honeypot: look successful, send nothing
+    inFlight = true; sendBtn.disabled = true; sendBtn.setAttribute('aria-busy', 'true');
+    let res; try { res = await sendLead(lead); } catch (err) { res = { ok: false }; }
+    inFlight = false; sendBtn.disabled = false; sendBtn.removeAttribute('aria-busy');
+    if (!res.ok) { done.hidden = true; st.textContent = 'השליחה לא הצליחה, והפרטים שמילאתם נשמרו בטופס. אפשר לנסות שוב, או לכתוב ל־' + LEAD_CONFIG.to + '.'; return; }
+    /* B7: the HTML default is the real success text; the test-mode notice exists only in mode "none" */
+    if (res.preview) { $('#form-done-h').textContent = 'תודה, הפרטים נקלטו.'; $('#form-done-t').textContent = 'זוהי גרסת תצוגה של האתר: הטופס עדיין לא מחובר לשליחה, ולכן הפנייה לא נשלחה. אפשר לכתוב לנו ישירות ל־' + LEAD_CONFIG.to + '.'; }
+    else { $('#form-done-h').textContent = 'תודה, הפנייה נשלחה.'; $('#form-done-t').textContent = 'נחזור אליכם בהקדם.'; }
     done.hidden = true; void done.offsetWidth; done.hidden = false;
     done.setAttribute('tabindex', '-1'); done.focus({ preventScroll: false });
   });
