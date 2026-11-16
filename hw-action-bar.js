@@ -6,7 +6,7 @@
 (() => {
   const TEL = {
     'petah-tikva':    ['+972732741700', '073-274-1700', 'המשרד בפתח תקווה'],
-    'kiryat-malachi': ['+972732741699', '073-274-1699', 'סניף קריית מלאכי'] /* from the old site, Tal verifies at handoff */
+    'kiryat-malachi': ['+972732741699', '073-274-1699', 'סניף קריית מלאכי']
   };
   const bar = document.querySelector('.action-bar');
   if (!bar) return;

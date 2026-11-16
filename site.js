@@ -56,7 +56,6 @@
     paint();
   }
 
-  /* "לשיחה בנושא" and each service item preselect the topic (decisions/04, 05) */
   const topic = $('#f-topic');
   $$('[data-topic]').forEach(a => a.addEventListener('click', () => {
     const opt = [...topic.options].find(o => o.text === a.dataset.topic);
@@ -74,7 +73,6 @@
     void pp.offsetWidth; pp.classList.add('on');
   });
 
-  /* WhatsApp: prefilled with the chosen topic; number is the one already on the page (decisions/02 l.19) */
   const wa = $('#f-wa');
   if (wa) {
     const base = wa.getAttribute('href').split('?')[0];
@@ -82,7 +80,6 @@
     topic.addEventListener('change', upd); upd();
   }
 
-  /* form: preview has no send provider yet (decisions/05) */
   const f = $('#contact-form'), st = $('#form-status');
   f.addEventListener('submit', e => {
     e.preventDefault();
