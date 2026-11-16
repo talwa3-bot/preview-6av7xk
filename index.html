@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>חגי ולנשטין ושות' - רואי חשבון · פתח תקווה וקריית מלאכי</title>
 <meta name="description" content="משרד רואי חשבון משפחתי מאז 1965, בפתח תקווה ובקריית מלאכי. ביקורת דוחות כספיים, מסים, הערכות שווי ועבודות כלכליות, הנהלת חשבונות ושכר.">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex,nofollow">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="fonts/assistant-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- favicon option A (original-site files, byte-identical); awaiting manager approval: delete this block to remove -->
@@ -13,6 +13,7 @@
 <link rel="icon" href="assets/cropped-favicon-1-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/cropped-favicon-1-180x180.png">
 <!-- /favicon -->
+<script src="a11y-head.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="has-action-bar">
@@ -36,7 +37,7 @@
     <a class="logo" href="#main" aria-label="חגי ולנשטין ושות' - רואי חשבון, HAGGAI WALLENSTEIN &amp; Co. C.P.A. (Isr.), לראש העמוד"><img src="assets/logo-full.png" alt="" width="1125" height="825"></a>
     <nav aria-label="ניווט ראשי">
       <ul class="nav">
-        <li><a href="#clients">המשרד</a></li>
+        <li><a href="#about">המשרד</a></li>
         <li><a href="#services">שירותים</a></li>
         <li><a href="#partners">השותפים</a></li>
         <li><a href="#branches">הסניפים</a></li>
@@ -51,7 +52,7 @@
   </div>
   <nav class="mnav" id="mnav" aria-label="ניווט נייד" hidden>
     <ul>
-      <li><a href="#clients">המשרד</a></li>
+      <li><a href="#about">המשרד</a></li>
       <li><a href="#services">שירותים</a></li>
       <li><a href="#partners">השותפים</a></li>
       <li><a href="#branches">הסניפים</a></li>
@@ -75,7 +76,7 @@
     <div class="wrap">
       <div>
         <h1 id="h1"><span class="for">לחברות, לעצמאים, לשותפויות ולעמותות</span> <strong><span class="w" style="--w:0">רואי</span> <span class="w" style="--w:1">חשבון</span> <span class="w" style="--w:2">שתכירו</span> <span class="l2"><span class="w" style="--w:3">בשם</span> <span class="w" style="--w:4">ובפנים.</span></span></strong></h1>
-        <p class="lead rise r2">משרד משפחתי מאז <span class="num">1965</span>, בפתח תקווה ובקריית מלאכי. היום הוא בונה גם מודלים פיננסיים ואוטומציות מבוססי בינה מלאכותית.</p>
+        <p class="lead rise r2">משרד משפחתי מאז <span class="num">1965</span>, כ־<span class="num">30</span> אנשי צוות, בפתח תקווה ובקריית מלאכי. היום הוא בונה גם מודלים פיננסיים ואוטומציות מבוססי בינה מלאכותית.</p>
         <div class="actions rise r3">
           <a class="btn btn-primary" href="#contact">לתיאום פגישה עם שותף <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 6 9l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
           <a class="btn btn-ghost" href="#services">לכל השירותים</a>
@@ -112,22 +113,20 @@
     </div>
   </section>
 
-  <!-- 3 TODAY: security text from decisions/02 l.25 (pending Tal); a navy line shield with a lock draws itself -->
-  <section class="today sec" aria-labelledby="today-h" data-reveal>
+  <!-- 3 ABOUT (v4.3, Tal): replaces the big security block. Text copied word for word from the original site:
+       preview/original/shots/live_desktop_text.txt l.38-39 (heading), l.41, l.43, l.45 (= preview/original/index.html l.4, section#about).
+       Single deviation: "כ־25" -> "כ־30" per decisions/02 answer 7 and BRIEF l.43. No office photo exists in the original section,
+       so the AI meeting-room image (assets/ai/clients) sits beside it; moved here from the clients section so it is not shown twice. -->
+  <section class="about sec" id="about" aria-labelledby="about-h" data-reveal>
     <div class="wrap">
-      <div>
-        <p class="kicker">המשרד היום</p>
-        <h2 class="h2" id="today-h"><b>המידע שלכם מוגן.</b></h2>
-        <p class="body">צוות IT וממונה אבטחת מידע (CISO) אחראים על אבטחת המידע במשרד ועל שמירתו.</p>
-        <p class="note"><span class="ph">[ממתין לאישור טל: נוסח אבטחת מידע]</span></p>
+      <div class="about-txt">
+        <p class="kicker">על המשרד</p>
+        <h2 class="h2" id="about-h">מכירים את המספרים.<br><b>רואים את התמונה כולה.</b></h2>
+        <p class="about-lead">משרד משפחתי עם ניסיון רב־שנים, שממשיך להתפתח יחד עם הלקוחות שלו.</p>
+        <p class="body">משרד חגי ולנשטין ושות׳ הוקם בשנת <span class="num">1965</span> על ידי רו״ח חגי ולנשטין ז״ל. כיום מובילים את הפירמה עדו ונתאי ולנשטין, לצד צוות של כ־<span class="num">30</span> אנשי מקצוע בשני סניפים, בפתח תקווה ובקריית מלאכי.</p>
+        <p class="body">אנחנו מעניקים מעטפת של שירותי חשבונאות, מיסוי וייעוץ כלכלי לחברות, לעצמאים, לשותפויות ולעמותות. בבסיס העבודה שלנו עומדים יושרה, מקצועיות, היכרות עם העסק וזמינות מרמת השותף ומטה.</p>
       </div>
-      <svg class="shield-art" viewBox="0 0 400 440" aria-hidden="true" focusable="false">
-        <path class="s1" pathLength="1" d="M200 24 L352 78 V206 C352 304 288 372 200 412 C112 372 48 304 48 206 V78 Z"/>
-        <path class="s2" pathLength="1" d="M200 58 L322 101 V206 C322 284 272 340 200 374 C128 340 78 284 78 206 V101 Z"/>
-        <path class="s3" pathLength="1" d="M158 214 V186 a42 42 0 0 1 84 0 V214"/>
-        <rect class="s3" pathLength="1" x="138" y="214" width="124" height="96" rx="10"/>
-        <path class="s4" pathLength="1" d="M200 246 a12 12 0 1 1 -0.01 0 M200 270 V288"/>
-      </svg>
+      <figure class="about-fig"><img src="assets/ai/clients.webp" srcset="assets/ai/clients.webp 1x, assets/ai/clients@2x.webp 2x" alt="חדר ישיבות בהיר ושקט עם שולחן לבן ארוך, תיקיות כחולות וכוס מים, וחלונות גדולים לנוף עירוני" width="640" height="360" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
@@ -140,6 +139,7 @@
           <h2 class="h2" id="svc-h">כל מה שהמשרד נותן, <b>במקום אחד.</b></h2>
         </div>
       </div>
+      <figure class="sec-fig sec-fig-svc"><img src="assets/ai/services.webp" srcset="assets/ai/services.webp 1x, assets/ai/services@2x.webp 2x" alt="ידיים בחולצה לבנה עוברות עם עט על דוחות כספיים מודפסים, לצד מחשבון ותיקייה כחולה, על שולחן לבן ליד חלון" width="640" height="360" loading="lazy" decoding="async"></figure>
       <div class="feature">
         <span class="tag">תחום מומחיות</span>
         <div><h3>חברות ארנק ורווחים כלואים</h3><p>תחום שהמשרד מתמחה בו.</p></div>
@@ -171,6 +171,7 @@
           <a class="more" href="#contact" data-topic="שוטף וייעוץ: כללי">לשיחה בנושא שוטף וייעוץ <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
         </div>
       </div>
+      <p class="sec-note"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="4" y="9" width="12" height="8.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>אבטחת מידע: צוות IT וממונה אבטחת מידע (CISO) אחראים על אבטחת המידע במשרד ועל שמירתו. <span class="ph">[ממתין לאישור טל: נוסח אבטחת מידע]</span></span></p>
     </div>
   </section>
 
@@ -187,15 +188,15 @@
       <ul class="p-list">
         <li class="pcard" style="--i:0"><a href="#partner-iddo-wallenstein" data-bio="iddo-wallenstein">
           <div class="pic"><picture><source type="image/webp" srcset="assets/iddo-wallenstein.webp"><img src="assets/iddo-wallenstein.jpg" alt="" width="800" height="1000" loading="eager" decoding="async"></picture></div>
-          <span class="meta"><b>רו״ח עדו ולנשטין</b><span class="role">שותף בכיר</span><span class="br">פתח תקווה · קריית מלאכי</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+          <span class="meta"><b>רו״ח עדו ולנשטין</b><span class="role">שותף מוביל</span><span class="br">פתח תקווה · קריית מלאכי</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
         </a></li>
         <li class="pcard" style="--i:1"><a href="#partner-nitai-wallenstein" data-bio="nitai-wallenstein">
           <div class="pic"><picture><source type="image/webp" srcset="assets/nitai-wallenstein.webp"><img src="assets/nitai-wallenstein.jpg" alt="" width="800" height="1000" loading="eager" decoding="async"></picture></div>
-          <span class="meta"><b>רו״ח נתאי ולנשטין</b><span class="role">שותף בכיר</span><span class="br">פתח תקווה · קריית מלאכי</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+          <span class="meta"><b>רו״ח נתאי ולנשטין</b><span class="role">שותף מוביל</span><span class="br">פתח תקווה · קריית מלאכי</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
         </a></li>
         <li class="pcard" style="--i:2"><a href="#partner-eitan-weisberg" data-bio="eitan-weisberg">
           <div class="pic"><picture><source type="image/webp" srcset="assets/eitan-weisberg.webp"><img src="assets/eitan-weisberg.jpg" alt="" width="800" height="1000" loading="eager" decoding="async"></picture></div>
-          <span class="meta"><b>רו״ח איתן ויסברג</b><span class="role">שותף ומנהל המשרד</span><span class="br">פתח תקווה</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+          <span class="meta"><b>רו״ח איתן ויסברג</b><span class="role">שותף</span><span class="br">פתח תקווה · קריית מלאכי</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
         </a></li>
         <li class="pcard" style="--i:3"><a href="#partner-smadar-hayun" data-bio="smadar-hayun">
           <div class="pic"><div class="ph-empty"><span>תמונה תתווסף בהמשך</span></div></div>
@@ -205,6 +206,10 @@
           <div class="pic"><div class="ph-empty"><span>תמונה תתווסף בהמשך</span></div></div>
           <span class="meta"><b>רו״ח עוז ולנשטין</b><span class="role">שותף</span><span class="open">לפרופיל המלא <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
         </a></li>
+        <li class="pcard pcard-static" style="--i:5"><div class="pc">
+          <div class="pic"><div class="ph-empty" role="img" aria-label="חן ולנשטין: תמונה תתווסף בהמשך"><span aria-hidden="true">תמונה תתווסף בהמשך</span></div></div>
+          <span class="meta"><b>חן ולנשטין</b><span class="role">מנהל המשרד, יחד עם השותפים</span></span>
+        </div></li>
       </ul>
     </div>
   </section>
@@ -215,8 +220,8 @@
         <div class="pic"><picture><source type="image/webp" srcset="assets/iddo-wallenstein.webp"><img src="assets/iddo-wallenstein.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></picture></div>
         <div>
           <h3 id="bn-iddo-wallenstein">רו״ח עדו ולנשטין</h3>
-          <p class="r">שותף בכיר</p><p class="r">פתח תקווה · קריית מלאכי</p>
-          <dl><dt>ניסיון</dt><dd><p>יותר משלושה עשורים בביקורת, בחשבונאות, בייעוץ מס ובעבודה עם חברות ציבוריות.</p></dd><dt>תפקיד במשרד</dt><dd><p>שותף בכיר. מוביל את המשרד יחד עם נתאי ולנשטין, בסניפי פתח תקווה וקריית מלאכי.</p></dd></dl><aside class="pnote" aria-label="פרטים שממתינים לאישור"><p class="pnote-h"><span class="ph">[ממתין לאישור טל]</span></p><p>פרטים מלינקדאין, לפני פרסום:</p><ul><li><b>השכלה:</b> תואר ראשון במינהל עסקים, המכללה למנהל, <bdi dir="ltr">1985–1989</bdi></li><li><b>הסמכות:</b> רישיון רואה חשבון ממשרד המשפטים, ינואר 1989</li><li><b>ניסיון:</b> שותף מנהל במשרד מאז 2012. קודם לכן שותף בכיר בבייקר טילי ישראל (<bdi dir="ltr">2001–2008</bdi>) ובקרואו הורות (<bdi dir="ltr">2008–2011</bdi>). רואה חשבון במשרד חגי ולנשטין (<bdi dir="ltr">1989–1994</bdi>), והתמחות במשרד מרון סובל-שור (<bdi dir="ltr">1987–1989</bdi>).</li><li><b>תחומי התמחות:</b> אסטרטגיה עסקית ופיננסית</li><li><b>תפקיד במשרד:</b> Managing Partner (שותף מנהל)</li></ul></aside>
+          <p class="r">שותף מוביל</p><p class="r">פתח תקווה · קריית מלאכי</p>
+          <dl><dt>השכלה</dt><dd><p>תואר ראשון במינהל עסקים, המכללה למנהל, <bdi dir="ltr">1985–1989</bdi></p></dd><dt>הסמכות</dt><dd><p>רישיון רואה חשבון ממשרד המשפטים, ינואר 1989</p></dd><dt>ניסיון</dt><dd><p>יותר משלושה עשורים בביקורת, בחשבונאות, בייעוץ מס ובעבודה עם חברות ציבוריות.</p><p>שותף מנהל במשרד מאז 2012. קודם לכן שותף בכיר בבייקר טילי ישראל (<bdi dir="ltr">2001–2008</bdi>) ובקרואו הורות (<bdi dir="ltr">2008–2011</bdi>). רואה חשבון במשרד חגי ולנשטין (<bdi dir="ltr">1989–1994</bdi>), והתמחות במשרד מרון סובל-שור (<bdi dir="ltr">1987–1989</bdi>).</p></dd><dt>תחומי התמחות</dt><dd><p>אסטרטגיה עסקית ופיננסית</p></dd><dt>שירות מילואים</dt><dd><p>עדו ממשיך להתנדב למרות גילו, לשרות מילואים סדיר, כסגן אלוף ביחידת 8200.</p></dd><dt>תפקיד במשרד</dt><dd><p>שותף מוביל במשרד, יחד עם נתאי ולנשטין, בסניפי פתח תקווה וקריית מלאכי.</p><p>Managing Partner (שותף מנהל)</p></dd></dl>
           <a class="btn btn-line bio-cta" href="#contact">לתיאום פגישה <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 6 9l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
         </div>
       </article>
@@ -224,8 +229,8 @@
         <div class="pic"><picture><source type="image/webp" srcset="assets/nitai-wallenstein.webp"><img src="assets/nitai-wallenstein.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></picture></div>
         <div>
           <h3 id="bn-nitai-wallenstein">רו״ח נתאי ולנשטין</h3>
-          <p class="r">שותף בכיר</p><p class="r">פתח תקווה · קריית מלאכי</p>
-          <dl><dt>תפקיד במשרד</dt><dd><p>שותף בכיר ושותף לניהול המשרד יחד עם עדו ולנשטין, בסניפי פתח תקווה וקריית מלאכי.</p></dd></dl><aside class="pnote" aria-label="פרטים שממתינים לאישור"><p class="pnote-h"><span class="ph">[ממתין לאישור טל]</span></p><p>יתווספו: השכלה, ניסיון, תחומי התמחות.</p></aside>
+          <p class="r">שותף מוביל</p><p class="r">פתח תקווה · קריית מלאכי</p>
+          <dl><dt>תפקיד במשרד</dt><dd><p>שותף מוביל במשרד, יחד עם עדו ולנשטין, בסניפי פתח תקווה וקריית מלאכי.</p></dd></dl><aside class="pnote" aria-label="פרטים שממתינים לאישור"><p class="pnote-h"><span class="ph">[ממתין לאישור טל]</span></p><p>יתווספו: השכלה, ניסיון, תחומי התמחות.</p></aside>
           <a class="btn btn-line bio-cta" href="#contact">לתיאום פגישה <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 6 9l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
         </div>
       </article>
@@ -233,8 +238,8 @@
         <div class="pic"><picture><source type="image/webp" srcset="assets/eitan-weisberg.webp"><img src="assets/eitan-weisberg.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></picture></div>
         <div>
           <h3 id="bn-eitan-weisberg">רו״ח איתן ויסברג</h3>
-          <p class="r">שותף ומנהל המשרד</p><p class="r">פתח תקווה</p>
-          <dl><dt>ניסיון</dt><dd><p>הצטרף למשרד כמתמחה ומביא איתו ותק של שנים רבות. משלב ניסיון בהוראה עם ידע חשבונאי עמוק.</p></dd><dt>תחומי התמחות</dt><dd><p>עבודות כלכליות מבוססות בינה מלאכותית: מודלים פיננסיים מורכבים באקסל, מהסוג שמעטים יודעים לבנות, תקציב מול ביצוע ואוטומציות.</p></dd><dt>תפקיד במשרד</dt><dd><p>שותף ומנהל המשרד. מנהל את מחלקת הביקורת של המשרד כולו, מקצה לקצה, ומוביל את המחלקה הכלכלית.</p></dd></dl><aside class="pnote" aria-label="פרטים שממתינים לאישור"><p class="pnote-h"><span class="ph">[ממתין לאישור טל]</span></p><p>פרטים מלינקדאין, לפני פרסום:</p><ul><li><b>השכלה:</b> לימודי חשבונאות לקראת הסמכה, אוניברסיטת בר־אילן (<bdi dir="ltr">2012–2014</bdi>). B.Ed בחינוך, מכללת הרצוג (<bdi dir="ltr">2001–2005</bdi>).</li><li><b>ניסיון:</b> ראש מחלקת הביקורת במשרד מאז 2017. מורה ומחנך במשרד החינוך (<bdi dir="ltr">2005–2008</bdi>).</li></ul></aside>
+          <p class="r">שותף</p><p class="r">פתח תקווה · קריית מלאכי</p>
+          <dl><dt>השכלה</dt><dd><p>לימודי חשבונאות לקראת הסמכה, אוניברסיטת בר־אילן (<bdi dir="ltr">2012–2014</bdi>). B.Ed בחינוך, מכללת הרצוג (<bdi dir="ltr">2001–2005</bdi>).</p></dd><dt>ניסיון</dt><dd><p>התחיל במשרד כמתמחה וצמח בו לאורך שנים רבות. משלב ניסיון בהוראה עם ידע חשבונאי עמוק.</p><p>ראש מחלקת הביקורת במשרד מאז 2017. מורה ומחנך במשרד החינוך (<bdi dir="ltr">2005–2008</bdi>).</p></dd><dt>תחומי התמחות</dt><dd><p>עבודות כלכליות מבוססות בינה מלאכותית: מודלים פיננסיים מורכבים באקסל, תקציב מול ביצוע ואוטומציות.</p></dd><dt>תפקיד במשרד</dt><dd><p>שותף בסניפי פתח תקווה וקריית מלאכי. מנהל את מחלקת הביקורת של המשרד כולו, מקצה לקצה, ומוביל את המחלקה הכלכלית.</p></dd></dl>
           <a class="btn btn-line bio-cta" href="#contact">לתיאום פגישה <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 6 9l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
         </div>
       </article>
@@ -301,6 +306,9 @@
     </div>
   </section>
 
+  <!-- v4.3: generic AI building, atmosphere only: full-width banner above the section, never in a card or next to an address -->
+  <figure class="br-banner"><img src="assets/ai/branches.webp" srcset="assets/ai/branches.webp 1x, assets/ai/branches@2x.webp 2x" alt="חזית בניין משרדים לבן עם כניסת זכוכית ושורות חלונות, תחת שמיים כחולים ועצים ירוקים" width="640" height="360" loading="lazy" decoding="async"></figure>
+
   <!-- 7 BRANCHES: two addresses, joined by the partners they share; the line connects them -->
   <section class="branches sec" id="branches" aria-labelledby="br-h" data-reveal>
     <div class="wrap">
@@ -316,14 +324,14 @@
             <dt>שותפים</dt><dd>רו״ח עדו ולנשטין, רו״ח נתאי ולנשטין, רו״ח איתן ויסברג</dd>
           </dl>
         </article>
-        <div class="link" aria-hidden="true" data-scrub><span>עדו ונתאי</span></div>
+        <div class="link" aria-hidden="true" data-scrub><span>עדו, נתאי ואיתן</span></div>
         <article class="bcard" id="branch-km" aria-labelledby="km-h">
           <span class="tag">סניף</span>
           <h3 id="km-h">קריית מלאכי</h3>
           <dl>
             <dt>טלפון</dt><dd><a href="tel:+972732741699" class="ltr">073-274-1699</a></dd>
             <dt>מייל</dt><dd><a href="mailto:office@hwcpa.co.il" class="ltr">office@hwcpa.co.il</a></dd>
-            <dt>שותפים</dt><dd>רו״ח עדו ולנשטין, רו״ח נתאי ולנשטין, סמדר חיון</dd>
+            <dt>שותפים</dt><dd>רו״ח עדו ולנשטין, רו״ח נתאי ולנשטין, רו״ח איתן ויסברג, סמדר&nbsp;חיון</dd>
           </dl>
         </article>
       </div>
@@ -344,7 +352,7 @@
     <nav aria-labelledby="fn-h">
       <h2 id="fn-h">ניווט</h2>
       <ul>
-        <li><a href="#clients">המשרד</a></li>
+        <li><a href="#about">המשרד</a></li>
         <li><a href="#services">שירותים</a></li>
         <li><a href="#partners">השותפים</a></li>
         <li><a href="#branches">הסניפים</a></li>
@@ -383,5 +391,6 @@
 
 <script src="hw-action-bar.js" defer></script>
 <script src="site.js" defer></script>
+<script src="a11y.js" defer></script>
 </body>
 </html>

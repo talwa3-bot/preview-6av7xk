@@ -1,4 +1,4 @@
-/* design-v4.2 · progressive enhancement only: the page is complete without this file */
+/* design-v4.3 · progressive enhancement only: the page is complete without this file */
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
@@ -17,6 +17,7 @@
     rev.forEach(el => io.observe(el));
   } else rev.forEach(el => el.classList.add('in'));
 
+  const still = () => document.documentElement.classList.contains('a11y-still');   // v4.3 accessibility menu
   const motionOK = matchMedia('(prefers-reduced-motion: no-preference)').matches;
 
   /* hero depth: the building drifts slightly with scroll, and with the mouse on fine pointers (transform only) */
@@ -25,6 +26,7 @@
     let mx = 0, my = 0, tick = false;
     const paint = () => {
       tick = false;
+      if (still()) { media.style.setProperty('--px', '0px'); media.style.setProperty('--py', '0px'); return; }
       const h = hero.offsetHeight, y = Math.min(Math.max(scrollY, 0), h);
       const py = Math.min(40, y * 0.12) + my * 8, px = mx * 14;
       media.style.setProperty('--px', px.toFixed(1) + 'px');
@@ -44,11 +46,13 @@
     let p = 0, tick = false;
     const paint = () => {
       tick = false;
+      if (still()) { p = 1; line.style.setProperty('--p', '1'); line.classList.add('done'); return; }
       const r = line.parentElement.getBoundingClientRect(), vh = innerHeight;
       const q = Math.min(1, Math.max(0, (vh - (r.top + r.height / 2)) / (vh * 0.45)));
       if (q > p) { p = q; line.style.setProperty('--p', p.toFixed(3)); if (p >= 0.98) line.classList.add('done'); }
     };
     addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(paint); } }, { passive: true });
+    document.addEventListener('a11y:change', paint);
     paint();
   }
 
@@ -83,7 +87,8 @@
   f.addEventListener('submit', e => {
     e.preventDefault();
     const bad = $$('[required]', f).find(el => el.type === 'checkbox' ? !el.checked : !el.value.trim() || !el.checkValidity());
-    if (bad) { st.textContent = 'נא למלא את השדה: ' + ((bad.labels && bad.labels[0] && bad.labels[0].textContent.trim()) || 'אישור מדיניות הפרטיות'); bad.focus(); return; }
+    $$('[aria-invalid]', f).forEach(el => { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });   // v4.3 a11y
+    if (bad) { st.textContent = 'נא למלא את השדה: ' + ((bad.labels && bad.labels[0] && bad.labels[0].textContent.trim()) || 'אישור מדיניות הפרטיות'); bad.setAttribute('aria-invalid', 'true'); bad.setAttribute('aria-describedby', 'form-status'); bad.focus(); return; }
     st.textContent = '';
     const done = $('#form-done'); done.hidden = true; void done.offsetWidth; done.hidden = false;
     done.setAttribute('tabindex', '-1'); done.focus({ preventScroll: false });
