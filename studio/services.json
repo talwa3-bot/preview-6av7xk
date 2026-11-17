@@ -433,10 +433,10 @@
   },
   {
     "id": "budget",
-    "group": 2,
+    "group": 1,
     "title": [
-      "תקציב, ביצוע ותזרים מזומנים",
-      "Budget, actuals & cash flow"
+      "תקציב מול ביצוע ותזרים מזומנים",
+      "Budget vs. actual & cash flow"
     ],
     "department": [
       "המחלקה הכלכלית במשרד",
@@ -515,19 +515,19 @@
       "Economic Advisory, together with the Accounting teams"
     ],
     "intro": [
-      "המשרד משתמש בתוכנות מתקדמות, בכלי בינה מלאכותית ובאוטומציות כחלק מהעבודה המקצועית. המחלקה הכלכלית בונה מודלים פיננסיים מורכבים באקסל ותהליכים שמסייעים לארגן נתונים, לבצע חישובים ולהכין ניתוחים.",
-      "The firm uses advanced software, AI tools and automation in its professional work. Our Economic Advisory Department builds complex Excel financial models and workflows for organising data, calculations and analysis."
+      "המחלקה הכלכלית במשרד בונה מודלים פיננסיים וכלכליים באקסל, תחזיות תזרים מזומנים ודוחות פרופורמה. העבודה משלבת תוכנות מתקדמות, כלי בינה מלאכותית ואוטומציה של נתונים וחישובים, עם הגדרת הנחות ובדיקה מקצועית של התוצרים.",
+      "Our Economic Advisory Department builds Excel financial and economic models, cash-flow forecasts and pro forma financial statements. The work combines advanced software, AI and automation of data and calculations, with explicit assumptions and professional review."
     ],
     "items": [
       [
-        "מודלים פיננסיים באקסל לתכנון, ניתוח ותחזיות",
-        "אוטומציה של קליטת נתונים וחישובים חוזרים בהתאם לפרויקט",
-        "שילוב כלי בינה מלאכותית עם בדיקה מקצועית של התוצרים"
+        "מודלים פיננסיים וכלכליים לתכנון, תחזיות וניתוח פעילות",
+        "תזרים מזומנים ודוחות פרופורמה על בסיס הנחות עבודה ותרחישים",
+        "ניתוחי רגישות ואוטומציה של נתונים וחישובים, עם בדיקה מקצועית"
       ],
       [
-        "Excel models for planning, analysis and forecasting",
-        "Project-specific automation of data intake and recurring calculations",
-        "AI-assisted work with professional review of outputs"
+        "Financial and economic models for planning, forecasting and business analysis",
+        "Cash-flow forecasts and pro forma statements based on assumptions and scenarios",
+        "Sensitivity analysis and automation of data and calculations, with professional review"
       ]
     ],
     "output": [
@@ -717,6 +717,78 @@
     "clients": [
       "חברות · בעלי שליטה",
       "Companies · Controlling shareholders"
+    ]
+  },
+  {
+    "id": "business-finance",
+    "group": 1,
+    "title": [
+      "ייעוץ פיננסי לעסקים",
+      "Financial advisory for businesses"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד",
+      "The firm's Economic Advisory Department"
+    ],
+    "intro": [
+      "המחלקה הכלכלית במשרד מספקת ייעוץ פיננסי לעסקים על בסיס נתוני הפעילות, הרווחיות ותנועות המזומנים. העבודה נועדה לסייע להנהלה לבחון חלופות, לזהות צרכים פיננסיים ולתכנן את המשך הפעילות.",
+      "Our Economic Advisory Department provides financial advisory for businesses based on operating data, profitability and cash movements. The work supports management in assessing alternatives, identifying financial needs and planning future operations."
+    ],
+    "items": [
+      [
+        "ניתוח הכנסות, הוצאות ורווחיות לפי תחומי הפעילות",
+        "בחינת צורכי הון חוזר, תזרים ומקורות מימון אפשריים",
+        "בניית תחזיות וניתוח חלופות עסקיות לצורכי ההנהלה"
+      ],
+      [
+        "Analysing revenue, costs and profitability by activity",
+        "Reviewing working capital, cash flow and potential funding needs",
+        "Building forecasts and analysing business alternatives for management"
+      ]
+    ],
+    "output": [
+      "ניתוח פיננסי והמלצות מקצועיות בהתאם לנתוני העסק ולמטרת העבודה שהוגדרה.",
+      "Financial analysis and professional recommendations tailored to the business and the agreed assignment."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "tax-self-employed",
+    "group": 3,
+    "title": [
+      "ייעוץ מס לעצמאים",
+      "Tax advisory for self-employed individuals"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד מלווה עצמאים בבחינת היבטי המס של פעילותם ובהיערכות לדיווחים. השירות מותאם לאופי העסק ולנתוניו, וכולל בחינת ההכנסות וההוצאות, תכנון מס והכנת נתונים לדיווחים הנדרשים.",
+      "Our Tax Department advises self-employed individuals on the tax aspects of their activity and reporting needs. The service is tailored to the business, including review of income and expenses, tax planning and preparation of reporting information."
+    ],
+    "items": [
+      [
+        "בחינת היבטי המס של הפעילות והוצאות העסק",
+        "ייעוץ ותכנון מס בהתאם לנסיבות ולמידע שנמסר",
+        "היערכות לדוח השנתי ולהצהרות הון, בהתאם לצורך"
+      ],
+      [
+        "Reviewing the tax aspects of business activity and expenses",
+        "Tax advice and planning based on the individual circumstances",
+        "Preparing for annual returns and capital declarations as needed"
+      ]
+    ],
+    "output": [
+      "ליווי וייעוץ מס מקצועי לעצמאי, עם ניתוח ודיווחים בהיקף שסוכם עם המשרד.",
+      "Professional tax advisory for the self-employed client, with analysis and reporting within the agreed scope."
+    ],
+    "clients": [
+      "עצמאים",
+      "Self-employed"
     ]
   }
 ]
