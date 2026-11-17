@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const names = { iddo: 'רו״ח עדו ולנשטין', nitai: 'רו״ח נתאי ולנשטין', eitan: 'רו״ח איתן ויסברג', smadar: 'סמדר חיון', chen: 'חן ולנשטין' };
-  const roles = { iddo: 'שותף מייסד · דירקטור מוסמך', nitai: 'שותף מייסד', eitan: 'שותף · מנהל מחלקת ביקורת', smadar: 'מנהלת משרד קריית מלאכי · מנהלת חשבונות בכירה', chen: 'מנהל תפעול של כלל מערך המשרד' };
+  const roles = { iddo: 'שותף מייסד · דירקטור מוסמך', nitai: 'שותף מייסד · מוסמך גישור', eitan: 'שותף · מנהל מחלקת ביקורת', smadar: 'מנהלת משרד קריית מלאכי · מנהלת חשבונות בכירה', chen: 'מנהל תפעול של כלל מערך המשרד' };
   const key = new URLSearchParams(location.search).get('person');
   const form = document.getElementById('profile-form');
   if (names[key]) { form.elements.name.value = names[key]; form.elements.role.value = roles[key]; document.getElementById('person-name').textContent = names[key]; }
