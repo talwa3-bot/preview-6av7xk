@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hwcpa.co.il/studio/</loc></url>
-  <url><loc>https://hwcpa.co.il/studio/en.html</loc></url>
-  <url><loc>https://hwcpa.co.il/studio/privacy.html</loc></url>
-  <url><loc>https://hwcpa.co.il/studio/privacy-en.html</loc></url>
-  <url><loc>https://hwcpa.co.il/studio/accessibility.html</loc></url>
-  <url><loc>https://hwcpa.co.il/studio/accessibility-en.html</loc></url>
+  <url><loc>https://hwcpa.co.il/</loc></url>
+  <url><loc>https://hwcpa.co.il/en.html</loc></url>
+  <url><loc>https://hwcpa.co.il/privacy.html</loc></url>
+  <url><loc>https://hwcpa.co.il/privacy-en.html</loc></url>
+  <url><loc>https://hwcpa.co.il/accessibility.html</loc></url>
+  <url><loc>https://hwcpa.co.il/accessibility-en.html</loc></url>
 </urlset>

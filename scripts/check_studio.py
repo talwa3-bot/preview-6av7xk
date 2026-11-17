@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'studio'
+OUT=ROOT
 class Page(HTMLParser):
     def __init__(self,text):
         super().__init__(); self.ids=[]; self.links=[]; self.data=[]; self.h1=0; self.feed(text)
@@ -42,7 +42,7 @@ for filename in (p.name for p in OUT.glob('*.html')):
         if link.startswith(('http:','https:','mailto:','tel:')):continue
         path,_,fragment=link.partition('#')
         if path:
-            target=(OUT/path.split('?')[0]).resolve()
+            target=(OUT/path.split('?')[0].lstrip('/')).resolve()
             assert target.exists(), target
         elif fragment:
             assert fragment in page.ids, fragment
@@ -51,7 +51,7 @@ for filename in (p.name for p in OUT.glob('*.html')):
         assert text.count('class="hero-identity"') == 1
         assert 'hero-glass-' not in text
         assert text.count('class="branch-map"') == 2
-        assert len(re.findall(r'<img[^>]+src="../assets/logo-full.png"',text))==1, 'Logo must appear exactly once on each main page'
+        assert len(re.findall(r'<img[^>]+src="assets/logo-full.png"',text))==1, 'Logo must appear exactly once on each main page'
         assert 'assistant-variable.woff2' in text
         assert 'id="service-search"' in text
         assert 'id="no-services"' in text
