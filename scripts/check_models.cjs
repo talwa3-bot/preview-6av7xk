@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {cashModel,proForma}=require('../studio/models.js');
+const {cashModel,proForma}=require('../models.js');
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} differs from ${b}`);
 near(cashModel(250,100).closing,340);
 near(cashModel(250,70).closing,-71);

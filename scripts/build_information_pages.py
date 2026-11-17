@@ -1,7 +1,7 @@
 """Publish factual information about the actual preview implementation."""
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parents[1] / 'studio'
+OUT = Path(__file__).resolve().parents[1]
 
 PRIVACY = [
     ('המידע בטופס הפנייה', 'Enquiry information',
@@ -59,8 +59,8 @@ def build(kind, language):
     accessibility = 'accessibility.html' if he else 'accessibility-en.html'
     html = f'''<!doctype html><html lang="{t('he','en')}" dir="{t('rtl','ltr')}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title} | {t('חגי ולנשטין ושות׳','Haggai Wallenstein & Co.')}</title><link rel="stylesheet" href="studio.css?v=7"><link rel="icon" href="../assets/cropped-favicon-1-32x32.png"></head><body>
-<a class="skip" href="#main">{t('דילוג לתוכן','Skip to content')}</a><header class="info-header"><a class="info-brand" href="{home}"><img src="../assets/logo-full.png" alt="{t('חגי ולנשטין ושות׳ רואי חשבון','Haggai Wallenstein & Co. CPAs')}" width="1125" height="825"></a><a class="info-language" href="{alternate}" lang="{t('en','he')}">{t('English','עברית')}</a><a href="{home}#contact">{t('יצירת קשר','Contact')}</a></header>
+<title>{title} | {t('חגי ולנשטין ושות׳','Haggai Wallenstein & Co.')}</title><link rel="stylesheet" href="studio.css?v=7"><link rel="icon" href="assets/cropped-favicon-1-32x32.png"></head><body>
+<a class="skip" href="#main">{t('דילוג לתוכן','Skip to content')}</a><header class="info-header"><a class="info-brand" href="{home}"><img src="assets/logo-full.png" alt="{t('חגי ולנשטין ושות׳ רואי חשבון','Haggai Wallenstein & Co. CPAs')}" width="1125" height="825"></a><a class="info-language" href="{alternate}" lang="{t('en','he')}">{t('English','עברית')}</a><a href="{home}#contact">{t('יצירת קשר','Contact')}</a></header>
 <main id="main" tabindex="-1" class="info-page"><h1>{title}</h1>{sections}<p><a href="mailto:office@hwcpa.co.il">office@hwcpa.co.il</a><br><a href="tel:+972732741700" dir="ltr">073-274-1700</a></p><p class="updated">{t('עודכן:','Updated:')} 17.11.2026</p></main>
 <footer class="info-footer"><a href="{home}">{t('חזרה לאתר המשרד','Back to the firm website')}</a><a href="{privacy}">{t('פרטיות','Privacy')}</a><a href="{accessibility}">{t('נגישות','Accessibility')}</a></footer></body></html>'''
     (OUT / filename).write_text(html)

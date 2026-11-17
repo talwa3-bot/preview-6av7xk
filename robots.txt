@@ -2,10 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /integrations/
 Disallow: /scripts/
-Disallow: /studio/team-questionnaires.html
-Disallow: /studio/partner-questionnaire.html
-Disallow: /studio/progress.html
-Disallow: /studio/hero-concept.html
-Disallow: /studio/font-preview.html
+Disallow: /team-questionnaires.html
+Disallow: /partner-questionnaire.html
+Disallow: /progress.html
+Disallow: /hero-concept.html
+Disallow: /font-preview.html
 
 Sitemap: https://hwcpa.co.il/sitemap.xml
