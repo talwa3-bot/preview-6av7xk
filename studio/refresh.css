@@ -143,8 +143,6 @@ h2 .lite{font-weight:300;color:var(--brand)}
 #partners .chips span{font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--ice-2);color:var(--navy-2)}
 #partners .portrait{border-radius:16px 16px 16px var(--r-leaf)!important;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .45s ease-out,box-shadow .45s}
 #partners .team-founders .partner-card:nth-child(2) .portrait{border-radius:16px 16px var(--r-leaf) 16px!important}
-#partners .portrait>img{filter:grayscale(1) contrast(1.05);transition:filter .9s var(--ease-out),transform .8s var(--ease-out)!important}
-#partners .partner-card:hover .portrait>img,#partners .partner-card.in-view .portrait>img{filter:none}
 #partners .partner-card:hover .portrait{box-shadow:0 0 0 1.5px var(--neon),0 26px 50px -26px #0B2735}
 #partners .team-leadership .partner-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:end}
 #partners .team-profile{display:flex!important;flex-direction:column;justify-content:flex-end;gap:6px;padding:30px 32px!important;background:linear-gradient(160deg,#EAF0F6,#f7fafd);border-radius:6px var(--r-card) var(--r-card) 6px;border-inline-start:3px solid var(--red);min-height:190px}
