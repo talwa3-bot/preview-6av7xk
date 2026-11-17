@@ -47,7 +47,9 @@ for filename in (p.name for p in OUT.glob('*.html')):
             assert fragment in page.ids, fragment
     if main:
         assert len(re.findall('type="submit" disabled name="channel"',text))==2
-        assert 'class="hero-identity hero-entry"' in text
+        assert text.count('class="hero-identity"') == 1
+        assert 'hero-glass-' not in text
+        assert text.count('class="branch-map"') == 2
         assert len(re.findall(r'<img[^>]+src="../assets/logo-full.png"',text))==1, 'Logo must appear exactly once on each main page'
         assert 'assistant-variable.ttf' in text
         assert 'id="service-search"' in text

@@ -39,7 +39,7 @@
     disclosureAnimations.set(details, {animation, opening});
     animation.onfinish = () => { if (disclosureAnimations.get(details)?.animation !== animation) return; details.open = opening; details.style.height = ''; details.style.overflow = ''; disclosureAnimations.delete(details); };
   }
-  $$('.service, .partner-bio, .demo-data, .recognition-disclosure').forEach(details => details.querySelector('summary').addEventListener('click', event => { event.preventDefault(); animateDisclosure(details); }));
+  $$('.service, .partner-bio, .demo-data, .recognition-disclosure, .model-panel').forEach(details => details.querySelector('summary').addEventListener('click', event => { event.preventDefault(); animateDisclosure(details); }));
   $$('.partner-grid, .recognition-grid').forEach(grid => [...grid.children].forEach((el,i) => el.style.setProperty('--reveal-delay', `${i * 75}ms`)));
   const menuButton = $('.menu-toggle'), mobileMenu = $('#mobile-nav');
   function closeMenu() { mobileMenu.hidden = true; menuButton.setAttribute('aria-expanded', 'false'); }
@@ -233,4 +233,24 @@
         else target.append(block);
       }
     }).catch(() => {});
+  const logoAura = $('.logo-aura'), logoArea = $('.hero-text');
+  if (logoAura && logoArea && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    let auraFrame = 0, pointerX = .5, pointerY = .5;
+    logoArea.addEventListener('pointermove', event => {
+      if (reduce.matches || userReduce) return;
+      const rect = logoArea.getBoundingClientRect();
+      pointerX = Math.min(.9, Math.max(.1, (event.clientX - rect.left) / rect.width));
+      pointerY = Math.min(.9, Math.max(.1, (event.clientY - rect.top) / rect.height));
+      if (auraFrame) return;
+      auraFrame = requestAnimationFrame(() => {
+        logoAura.style.setProperty('--aura-x', `${pointerX * 100}%`);
+        logoAura.style.setProperty('--aura-y', `${pointerY * 100}%`);
+        auraFrame = 0;
+      });
+    }, {passive:true});
+    logoArea.addEventListener('pointerleave', () => {
+      if (auraFrame) cancelAnimationFrame(auraFrame); auraFrame = 0;
+      logoAura.style.removeProperty('--aura-x'); logoAura.style.removeProperty('--aura-y');
+    });
+  }
 })();

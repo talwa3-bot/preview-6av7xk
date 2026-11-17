@@ -11,8 +11,11 @@ PRIVACY = [
      'הטופס מכין הודעה בדפדפן. הוא אינו שולח את הפרטים אוטומטית למשרד ואינו שומר אותם בשרת של האתר. לאחר ההכנה מוצג קישור לוואטסאפ או לתוכנת המייל. פתיחת הקישור מעבירה את פרטי ההודעה לשירות שבחרתם לצורך הכנתה. שליחת ההודעה למשרד מתבצעת על ידכם באותו שירות.',
      'The form prepares a message in your browser. It does not automatically send your details to the firm or store them on the website server. A link then opens WhatsApp or your email app with the message details. You review and send the message in the selected service.'),
     ('שאלוני פרופילים', 'Profile questionnaires',
-     'שאלוני הצוות מיועדים להכנת פרופילים מקצועיים. התשובות מורדות לקובץ במכשיר שלכם. הן אינן נשלחות אוטומטית ואינן נשמרות בשרת האתר. העברת הקובץ לטיפול במשרד נעשית בנפרד על ידכם.',
-     'Team questionnaires help prepare professional profiles. Answers are downloaded as a file on your device. They are not automatically transmitted or stored on the website server. You share the file with the firm separately.'),
+     'השאלונים האישיים המקוונים שומרים את התשובות במערכת נפרדת לצורך עדכון פרופילי הצוות. התשובות המקצועיות שנשלחות מוצגות בפרופיל באתר; קישורי קבצים והערות לטל נשמרים לבדיקה ואינם מוצגים בפרופיל הציבורי. השאלון המקומי הישן, המוריד קובץ, נשאר ככלי גיבוי.',
+     'Personal online questionnaires store answers in a separate system for staff profile updates. Submitted professional answers appear in the website profile; document links and notes to Tal are retained for review and excluded from the public profile. The older download-only questionnaire remains a backup.'),
+    ('מפות הסניפים', 'Office maps',
+     'מפות הסניפים משובצות באמצעות Google Maps ונטענות משירות חיצוני. בעת טעינת מפה מועברים לשירות נתוני החיבור של הדפדפן. אפשר לפתוח את קישור הניווט לצד כל כתובת.',
+     'Office maps are embedded using Google Maps and load from an external service. Loading a map shares browser connection data with that service. A separate directions link is also provided beside each address.'),
     ('העדפות בדפדפן', 'Browser preferences',
      'העדפת הפחתת התנועה נשמרת מקומית בדפדפן כדי להחיל את בחירתכם בביקורים נוספים. האתר אינו שומר שם את תוכן הפניות. הגדרות מילוי אוטומטי ושמירת נתונים של הדפדפן מנוהלות על ידכם בהגדרות הדפדפן.',
      'Your reduced-motion preference is stored locally in the browser for future visits. The site does not store enquiry content there. Browser autofill and its own data-storage preferences are managed in your browser settings.'),
@@ -56,7 +59,7 @@ def build(kind, language):
     accessibility = 'accessibility.html' if he else 'accessibility-en.html'
     html = f'''<!doctype html><html lang="{t('he','en')}" dir="{t('rtl','ltr')}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>{title} | {t('חגי ולנשטין ושות׳','Haggai Wallenstein & Co.')}</title><link rel="stylesheet" href="studio.css?v=3"><link rel="icon" href="../assets/cropped-favicon-1-32x32.png"></head><body>
+<title>{title} | {t('חגי ולנשטין ושות׳','Haggai Wallenstein & Co.')}</title><link rel="stylesheet" href="studio.css?v=7"><link rel="icon" href="../assets/cropped-favicon-1-32x32.png"></head><body>
 <a class="skip" href="#main">{t('דילוג לתוכן','Skip to content')}</a><header class="info-header"><a class="info-brand" href="{home}"><img src="../assets/logo-full.png" alt="{t('חגי ולנשטין ושות׳ רואי חשבון','Haggai Wallenstein & Co. CPAs')}" width="1125" height="825"></a><a class="info-language" href="{alternate}" lang="{t('en','he')}">{t('English','עברית')}</a><a href="{home}#contact">{t('יצירת קשר','Contact')}</a></header>
 <main id="main" tabindex="-1" class="info-page"><h1>{title}</h1>{sections}<p><a href="mailto:office@hwcpa.co.il">office@hwcpa.co.il</a><br><a href="tel:+972732741700" dir="ltr">073-274-1700</a></p><p class="updated">{t('עודכן:','Updated:')} 17.11.2026</p></main>
 <footer class="info-footer"><a href="{home}">{t('חזרה לאתר המשרד','Back to the firm website')}</a><a href="{privacy}">{t('פרטיות','Privacy')}</a><a href="{accessibility}">{t('נגישות','Accessibility')}</a></footer></body></html>'''
