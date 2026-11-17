@@ -35,11 +35,11 @@ ACCESSIBILITY = [
      'האתר מכבד העדפה להפחתת תנועה במערכת ההפעלה וכולל מתג להפחתת תנועה בתחתית דף הבית. הפריסה מותאמת למסכי מחשב וטלפון. הטקסט בשתי השפות משתמש באותה משפחת גופן, ונתוני ההמחשה הפיננסית מוצגים גם בטבלה.',
      'The site respects the operating system’s reduced-motion setting and provides a reduced-motion control in the home-page footer. The layout adapts to desktop and phone screens. Both languages use one type family, and the financial illustration also has a data table.'),
     ('הבדיקות שבוצעו ומגבלותיהן', 'Checks and their limits',
-     'נבדקו פריסה, תפריט טלפון, שירותים נפתחים, סינון וחיפוש, פרופילים והכנת פניות בדפדפן. גרסת התצוגה לא עברה מבדק התאמה מלא על ידי מורשה נגישות ולא נבדקה עם משתמשים עם מוגבלות או עם קורא מסך. אין בעמוד זה אישור לעמידה בתקן.',
-     'Browser checks covered layout, mobile navigation, expandable services, search and filters, profiles and enquiry preparation. This preview has not undergone a complete certified accessibility assessment or testing with disabled users or a screen reader. This page is not a certification of standards compliance.'),
+     'נבדקו פריסה, תפריט טלפון, שירותים נפתחים, סינון וחיפוש, פרופילים והכנת פניות בדפדפן. האתר לא עבר מבדק התאמה מלא על ידי מורשה נגישות ולא נבדקה עם משתמשים עם מוגבלות או עם קורא מסך. אין בעמוד זה אישור לעמידה בתקן.',
+     'Browser checks covered layout, mobile navigation, expandable services, search and filters, profiles and enquiry preparation. The site has not undergone a complete certified accessibility assessment or testing with disabled users or a screen reader. This page is not a certification of standards compliance.'),
     ('פנייה בנושא נגישות', 'Accessibility enquiries',
-     'אם נתקלתם בקושי בשימוש באתר, אפשר לפנות למשרד. ציינו את העמוד, תיאור הקושי והדפדפן או המכשיר שבהם השתמשתם, ככל שניתן.',
-     'If you encounter difficulty using the site, contact the firm. Where possible, include the page, a description of the difficulty and your browser or device.'),
+     'אם נתקלתם בקושי בשימוש באתר, אפשר לפנות לרכז הנגישות של המשרד, חן ולנשטין, בטלפון 054-5616662 או במייל chen@hwcpa.co.il. ציינו את העמוד, תיאור הקושי והדפדפן או המכשיר שבהם השתמשתם, ככל שניתן.',
+     'If you encounter difficulty using the site, contact the firm’s accessibility coordinator, Chen Wallenstein, at +972-54-561-6662 or chen@hwcpa.co.il. Where possible, include the page, a description of the difficulty and your browser or device.'),
     ('נגישות הסניפים', 'Office accessibility',
      'לבירור הסדרי הנגישות במשרדים בפתח תקווה ובקריית מלאכי ניתן לפנות למשרד לפני ההגעה.',
      'For information about accessibility arrangements in Petah Tikva and Kiryat Malakhi, contact the firm before your visit.'),
@@ -58,7 +58,7 @@ def build(kind, language):
     privacy = 'privacy.html' if he else 'privacy-en.html'
     accessibility = 'accessibility.html' if he else 'accessibility-en.html'
     html = f'''<!doctype html><html lang="{t('he','en')}" dir="{t('rtl','ltr')}"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} | {t('חגי ולנשטין ושות׳','Haggai Wallenstein & Co.')}</title><link rel="stylesheet" href="studio.css?v=7"><link rel="icon" href="../assets/cropped-favicon-1-32x32.png"></head><body>
 <a class="skip" href="#main">{t('דילוג לתוכן','Skip to content')}</a><header class="info-header"><a class="info-brand" href="{home}"><img src="../assets/logo-full.png" alt="{t('חגי ולנשטין ושות׳ רואי חשבון','Haggai Wallenstein & Co. CPAs')}" width="1125" height="825"></a><a class="info-language" href="{alternate}" lang="{t('en','he')}">{t('English','עברית')}</a><a href="{home}#contact">{t('יצירת קשר','Contact')}</a></header>
 <main id="main" tabindex="-1" class="info-page"><h1>{title}</h1>{sections}<p><a href="mailto:office@hwcpa.co.il">office@hwcpa.co.il</a><br><a href="tel:+972732741700" dir="ltr">073-274-1700</a></p><p class="updated">{t('עודכן:','Updated:')} 17.11.2026</p></main>

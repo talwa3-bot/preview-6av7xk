@@ -33,7 +33,8 @@ for filename in (p.name for p in OUT.glob('*.html')):
     assert text.count('1965')==(1 if main else 0), 'Founding year must appear once outside the untouched logo'
     for phrase in ('זמינות מרמת השותף','CISO','צוות IT','סניף ראשי','רואי חשבון שתכירו בשם ובפנים','נתונים שאפשר לבדוק'):
         assert phrase not in text, phrase
-    assert 'noindex,nofollow' in text
+    public = filename in ('index.html','en.html','privacy.html','privacy-en.html','accessibility.html','accessibility-en.html')
+    assert ('noindex' not in text) if public else ('noindex,nofollow' in text), filename
     if main:
         for s in services:
             assert f'id="service-{s["id"]}"' in text

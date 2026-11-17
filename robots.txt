@@ -1,2 +1,11 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /integrations/
+Disallow: /scripts/
+Disallow: /studio/team-questionnaires.html
+Disallow: /studio/partner-questionnaire.html
+Disallow: /studio/progress.html
+Disallow: /studio/hero-concept.html
+Disallow: /studio/font-preview.html
+
+Sitemap: https://hwcpa.co.il/sitemap.xml
