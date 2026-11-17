@@ -91,7 +91,7 @@
         if (!service.hidden) count++;
       });
       tabs[index].disabled = !count;
-      $('.tab-count', tabs[index]).textContent = String(count).padStart(2, '0');
+      $('.tab-count', tabs[index]).textContent = `${count} ${t('שירותים', 'services')}`;
       total += count;
     });
     clientButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.client === selectedClient)));
@@ -140,7 +140,20 @@
     history.replaceState(null, '', `#service-${link.dataset.openService}`);
     $(`#service-${link.dataset.openService} > summary`).focus({ preventScroll: true });
   }));
-  function restoreHash() { if (location.hash.startsWith('#service-')) openService(location.hash.slice(9)); }
+  function openModel(id, scroll = true) {
+    const model = document.getElementById(id); if (!model?.classList.contains('model-panel')) return;
+    model.open = true;
+    if (scroll) model.scrollIntoView({block:'start',behavior:reduce.matches || userReduce ? 'instant' : 'smooth'});
+  }
+  $$('[data-open-model]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault(); openModel(link.dataset.openModel);
+    history.replaceState(null, '', `#${link.dataset.openModel}`);
+    document.querySelector(`#${link.dataset.openModel} > summary`).focus({preventScroll:true});
+  }));
+  function restoreHash() {
+    if (location.hash.startsWith('#service-')) openService(location.hash.slice(9));
+    if (['#cash-flow-model','#pro-forma-model'].includes(location.hash)) openModel(location.hash.slice(1));
+  }
   restoreHash(); addEventListener('hashchange', restoreHash);
   $$('[data-bio]').forEach(button => {
     button.disabled = false;
@@ -229,8 +242,9 @@
         const block = document.createElement('div'); block.className = 'submitted-profile';
         if (en) { if (!profile.english) continue; const p=document.createElement('p');p.textContent=profile.english;block.append(p); }
         else for (const [field,label] of Object.entries(labels)) { if (!profile[field]) continue; const h=document.createElement('h4'); h.textContent=label; const p=document.createElement('p');p.textContent=profile[field];block.append(h,p); }
+        if (!block.childElementCount) continue;
         if (target.classList.contains('manager')) { const details=document.createElement('details');details.className='manager-details';const summary=document.createElement('summary');summary.textContent=t('רקע וניסיון מקצועי','Professional background');details.append(summary,block);target.append(details); }
-        else target.append(block);
+        else { target.append(block); const profileDetails = target.closest('details'); if (profileDetails) profileDetails.hidden = false; }
       }
     }).catch(() => {});
   const logoAura = $('.logo-aura'), logoArea = $('.hero-text');
@@ -252,5 +266,11 @@
       if (auraFrame) cancelAnimationFrame(auraFrame); auraFrame = 0;
       logoAura.style.removeProperty('--aura-x'); logoAura.style.removeProperty('--aura-y');
     });
+  }
+  const chart = $('.chart');
+  if (chart && 'IntersectionObserver' in window && !reduce.matches && !userReduce) {
+    const chartObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { chart.classList.add('chart-visible'); chartObserver.unobserve(chart); }
+    }), {threshold:.25}); chartObserver.observe(chart);
   }
 })();
