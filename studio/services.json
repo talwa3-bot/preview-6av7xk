@@ -1,0 +1,722 @@
+[
+  {
+    "id": "audit",
+    "group": 0,
+    "title": [
+      "ביקורת דוחות כספיים",
+      "Financial statement audit"
+    ],
+    "department": [
+      "מחלקת הביקורת והחשבונאות במשרד",
+      "The firm's Audit & Accounting Department"
+    ],
+    "intro": [
+      "מחלקת הביקורת והחשבונאות במשרד מבצעת ביקורת דוחות כספיים לחברות. העבודה כוללת בחינה של הרישומים החשבונאיים, בדיקות מבססות ודיון בסוגיות שעלו, לצורך גיבוש חוות דעת רואה החשבון המבקר על הדוחות.",
+      "Our Audit & Accounting Department audits company financial statements. The work includes examining accounting records, performing audit procedures and discussing identified issues to support the independent auditor’s opinion."
+    ],
+    "items": [
+      [
+        "תכנון הביקורת והיכרות עם פעילות החברה",
+        "בדיקת יתרות, עסקאות ותיעוד תומך",
+        "בחינת סוגיות חשבונאיות והצגת ממצאים להנהלה"
+      ],
+      [
+        "Audit planning and understanding the business",
+        "Testing balances, transactions and supporting records",
+        "Reviewing accounting issues and communicating findings to management"
+      ]
+    ],
+    "output": [
+      "דוחות כספיים מבוקרים ודוח רואה החשבון המבקר, בהתאם למסגרת הדיווח ולהיקף ההתקשרות.",
+      "Audited financial statements and an independent auditor’s report, subject to the reporting framework and engagement scope."
+    ],
+    "clients": [
+      "חברות",
+      "Companies"
+    ]
+  },
+  {
+    "id": "statements",
+    "group": 0,
+    "title": [
+      "עריכת דוחות כספיים ודוחות מס",
+      "Financial statements & tax returns"
+    ],
+    "department": [
+      "מחלקת הביקורת והחשבונאות, בשיתוף מחלקת המיסים",
+      "Audit & Accounting, together with Tax"
+    ],
+    "intro": [
+      "המשרד עורך דוחות לחברות ולעצמאים בהתאם לאופי הפעילות ולחובות הדיווח החלות עליהם. מחלקות החשבונאות והמיסים מרכזות את הנתונים, בוחנות את ההתאמות הנדרשות ומכינות את הדיווחים הרלוונטיים.",
+      "The firm prepares reports for companies and self-employed individuals according to their activity and reporting obligations. Our Accounting and Tax teams assemble the records, review adjustments and prepare the relevant reports."
+    ],
+    "items": [
+      [
+        "עריכת דוחות כספיים לפי כללי חשבונאות מקובלים בישראל, ככל שהם חלים",
+        "דוח רווח והפסד ודוחות נוספים בהתאם לסוג הישות",
+        "דוחות התאמה לצורכי מס ודוחות מס לחברות ולעצמאים"
+      ],
+      [
+        "Financial statements under Israeli GAAP where applicable",
+        "Profit and loss statements and other entity-specific reports",
+        "Tax reconciliations and tax returns for companies and individuals"
+      ]
+    ],
+    "output": [
+      "מערך דוחות בהתאם לסוג הלקוח; ביקורת, כאשר נדרשת, היא שירות מקצועי נפרד.",
+      "An entity-specific reporting package. An audit, where required, is a separate professional service."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "nonprofits",
+    "group": 0,
+    "title": [
+      "ביקורת עמותות",
+      "Nonprofit audit"
+    ],
+    "department": [
+      "מחלקת הביקורת והחשבונאות במשרד",
+      "The firm's Audit & Accounting Department"
+    ],
+    "intro": [
+      "מחלקת הביקורת במשרד מטפלת גם בעמותות, תוך התייחסות למאפייני פעילותן, להכנסות מתרומות ותמיכות ולשימוש בכספים. העבודה מותאמת למסגרת הדיווח החלה על העמותה ולהיקף ההתקשרות.",
+      "Our Audit Department also serves nonprofit organisations, addressing their activities, donations, support income and use of funds. The work is tailored to the applicable reporting framework and engagement scope."
+    ],
+    "items": [
+      [
+        "ביקורת הדוחות הכספיים ובחינת הרישומים והאסמכתאות",
+        "בחינת הצגה של תרומות, תמיכות וכספים שיועדו למטרות מוגדרות",
+        "ריכוז סוגיות חשבונאיות ודיווחיות לדיון עם הנהלת העמותה"
+      ],
+      [
+        "Audit of financial statements, accounting records and supporting documents",
+        "Review of donations, grants and restricted funds presentation",
+        "Discussion of accounting and reporting matters with management"
+      ]
+    ],
+    "output": [
+      "דוחות כספיים מבוקרים ודוח מבקר; סיוע בדיווחים נלווים לפי הסיכום עם העמותה.",
+      "Audited financial statements and an auditor’s report, with additional reporting assistance as agreed."
+    ],
+    "clients": [
+      "עמותות",
+      "Nonprofits"
+    ]
+  },
+  {
+    "id": "opinions",
+    "group": 0,
+    "title": [
+      "חוות דעת מקצועיות",
+      "Professional expert opinions"
+    ],
+    "department": [
+      "מחלקות הביקורת, המיסים והעבודות הכלכליות במשרד",
+      "Audit, Tax & Economic Advisory"
+    ],
+    "intro": [
+      "רואי החשבון במשרד מכינים חוות דעת מקצועיות בסוגיות חשבונאיות, כלכליות ומיסויות. חוות הדעת יכולה לשמש את הלקוח, בית המשפט, הליך בוררות או גישור, לפי מטרת העבודה והמסמכים שהועמדו לבדיקה.",
+      "The firm's CPAs prepare expert opinions on accounting, economic and tax matters. Opinions may support a client, court, arbitration or mediation process, depending on the assignment and available evidence."
+    ],
+    "items": [
+      [
+        "הגדרת השאלה המקצועית ובדיקת התשתית העובדתית",
+        "ניתוח מסמכים, חישובים והנחות עבודה",
+        "הצגת מסקנות מקצועיות מנומקות ומגבלות הבדיקה"
+      ],
+      [
+        "Defining the professional question and reviewing the factual basis",
+        "Analysing documents, calculations and assumptions",
+        "Setting out reasoned conclusions and limitations"
+      ]
+    ],
+    "output": [
+      "חוות דעת של רואה חשבון. השירות אינו חוות דעת משפטית ואינו אישור לבנק.",
+      "A CPA expert opinion. This service is neither legal advice nor a bank certificate."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות · עמותות",
+      "Companies · Self-employed · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "bank",
+    "group": 0,
+    "title": [
+      "אישורי רואה חשבון לבנקים",
+      "CPA certificates for banks"
+    ],
+    "department": [
+      "מחלקת הביקורת והחשבונאות במשרד",
+      "The firm's Audit & Accounting Department"
+    ],
+    "intro": [
+      "מחלקת החשבונאות במשרד מסייעת בהכנת אישורי רואה חשבון הנדרשים על ידי בנקים. תחילה נבחנים נוסח הבקשה, המידע שעליו היא נשענת והאפשרות לתת את האישור בהתאם לכללים המקצועיים.",
+      "Our Accounting Department assists with CPA certificates requested by banks. We first review the requested wording, supporting information and whether the certificate can be issued under professional requirements."
+    ],
+    "items": [
+      [
+        "בדיקת דרישת הבנק ונוסח האישור",
+        "התאמת הנתונים למסמכים ולספרי העסק",
+        "הכנת אישור מתאים כאשר קיימת תשתית מקצועית מספקת"
+      ],
+      [
+        "Reviewing the bank's request and proposed wording",
+        "Reconciling the information to business records",
+        "Preparing a suitable certificate where adequately supported"
+      ]
+    ],
+    "output": [
+      "אישור בהיקף שניתן לבסס מקצועית; החלטת הבנק מתקבלת על ידו.",
+      "A certificate within the professionally supportable scope; the bank makes its own decision."
+    ],
+    "clients": [
+      "חברות · עצמאים",
+      "Companies · Self-employed"
+    ]
+  },
+  {
+    "id": "bookkeeping",
+    "group": 1,
+    "title": [
+      "הנהלת חשבונות",
+      "Bookkeeping"
+    ],
+    "department": [
+      "מחלקת הנהלת החשבונות במשרד",
+      "The firm's Bookkeeping Department"
+    ],
+    "intro": [
+      "מחלקת הנהלת החשבונות במשרד מטפלת בניהול ספרי העסק בשיטה כפולה או חד־צידית, בהתאם לאופי הפעילות ולהוראות החלות. העבודה כוללת ארגון הנתונים, רישום ובקרה שוטפים ותשתית לדיווחים התקופתיים והשנתיים.",
+      "Our Bookkeeping Department maintains double-entry or single-entry records according to the business and applicable requirements. The work covers organising records, ongoing bookkeeping and a basis for periodic and annual reporting."
+    ],
+    "items": [
+      [
+        "קליטת מסמכים ורישום הכנסות והוצאות",
+        "התאמות בנקים, ספקים ולקוחות בהתאם להיקף העבודה",
+        "הכנת נתונים לדיווחים תקופתיים ולסגירת שנה"
+      ],
+      [
+        "Recording income, expenses and supporting documents",
+        "Bank, supplier and customer reconciliations within scope",
+        "Preparing information for periodic reporting and year-end"
+      ]
+    ],
+    "output": [
+      "ספרים מסודרים ונתונים חשבונאיים מעודכנים בהתאם למידע שנמסר למשרד.",
+      "Organised accounting records based on the information provided to the firm."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות · עמותות",
+      "Companies · Self-employed · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "payroll",
+    "group": 1,
+    "title": [
+      "חשבות שכר",
+      "Payroll"
+    ],
+    "department": [
+      "מחלקת חשבות השכר במשרד",
+      "The firm's Payroll Department"
+    ],
+    "intro": [
+      "מחלקת חשבות השכר במשרד עוסקת בעריכה, חישוב וניהול תלושי שכר. הטיפול נשען על נתוני ההעסקה שנמסרים למשרד ועל הוראות הדין הרלוונטיות, וכולל בדיקת רכיבי השכר והניכויים.",
+      "Our Payroll Department prepares and calculates employee payslips using the employment information supplied to the firm and applicable requirements, including review of pay components and deductions."
+    ],
+    "items": [
+      [
+        "חישוב שכר ורכיבי שכר לפי נתוני המעסיק",
+        "חישוב ניכויים והפרשות במסגרת השירות",
+        "הכנת תלושים ונתונים לדיווחי שכר"
+      ],
+      [
+        "Calculating pay and pay components from employer data",
+        "Calculating deductions and contributions within scope",
+        "Preparing payslips and payroll reporting information"
+      ]
+    ],
+    "output": [
+      "תלושי שכר ודוחות שכר בהתאם להסכם השירות ולנתוני העובדים.",
+      "Payslips and payroll reports according to the service agreement and employee information."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות · עמותות",
+      "Companies · Self-employed · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "controlling",
+    "group": 1,
+    "title": [
+      "חשבות וליווי פיננסי",
+      "Financial controlling"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד",
+      "The firm's Economic Advisory Department"
+    ],
+    "intro": [
+      "המחלקה הכלכלית במשרד מספקת שירותי חשבות וליווי פיננסי להנהלה. השירות מחבר בין נתוני הנהלת החשבונות לבין תמונת הפעילות העסקית, ומסייע בבחינת תוצאות ובמעקב אחר יעדים.",
+      "Our Economic Advisory Department provides financial controlling and management support, connecting accounting information to business performance and helping management monitor results and objectives."
+    ],
+    "items": [
+      [
+        "ריכוז נתונים והכנת דוחות ניהוליים",
+        "ניתוח הכנסות, הוצאות ורווחיות",
+        "מעקב אחר מדדים וסוגיות לדיון עם ההנהלה"
+      ],
+      [
+        "Compiling information and management reports",
+        "Analysing revenue, costs and profitability",
+        "Monitoring metrics and matters for management discussion"
+      ]
+    ],
+    "output": [
+      "דוחות ניהוליים וניתוחים תקופתיים בהיקף ובתדירות שיסוכמו.",
+      "Management reports and periodic analysis at the agreed scope and frequency."
+    ],
+    "clients": [
+      "חברות · שותפויות · עמותות",
+      "Companies · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "board",
+    "group": 1,
+    "title": [
+      "ליווי מקצועי לדירקטוריון",
+      "Financial support for boards"
+    ],
+    "department": [
+      "מחלקות החשבונאות והייעוץ הכלכלי במשרד",
+      "Accounting & Economic Advisory"
+    ],
+    "intro": [
+      "המשרד מספק ליווי חשבונאי וכלכלי לעבודת דירקטוריון: הכנת נתונים, ניתוח דוחות והצגת המשמעות הפיננסית של חלופות עסקיות. השירות נועד לסייע בדיון מקצועי על בסיס מידע מסודר.",
+      "The firm provides accounting and economic support for board work, including preparing information, analysing reports and explaining the financial implications of business alternatives."
+    ],
+    "items": [
+      [
+        "ניתוח דוחות כספיים ונתונים ניהוליים לקראת דיון",
+        "בחינת תחזיות, תקציבים וחלופות עסקיות",
+        "הצגת סוגיות חשבונאיות וכלכליות להנהלה ולדירקטוריון"
+      ],
+      [
+        "Analysing financial and management reports before meetings",
+        "Reviewing forecasts, budgets and alternatives",
+        "Presenting accounting and economic issues to management and directors"
+      ]
+    ],
+    "output": [
+      "חומר מקצועי לדיוני דירקטוריון. כהונה אישית כדירקטור מחייבת הסדרה נפרדת.",
+      "Professional materials for board discussions. A personal director appointment requires a separate arrangement."
+    ],
+    "clients": [
+      "חברות",
+      "Companies"
+    ]
+  },
+  {
+    "id": "mediation",
+    "group": 2,
+    "title": [
+      "גישור ובוררות על ידי רואה חשבון",
+      "CPA mediation & arbitration"
+    ],
+    "department": [
+      "תחום הגישור והבוררות במסגרת הייעוץ המקצועי במשרד",
+      "Mediation & arbitration within the firm's professional advisory services"
+    ],
+    "intro": [
+      "המשרד מציע שירותי גישור ובוררות על ידי רואה חשבון במחלוקות בעלות היבטים חשבונאיים וכלכליים. אופי ההליך ותפקיד רואה החשבון מוגדרים מראש, בהתאם להסכמת הצדדים ולמסגרת ההתקשרות.",
+      "The firm offers mediation and arbitration by a CPA in disputes involving accounting and economic issues. The process and CPA's role are defined in advance according to the parties' agreement and engagement terms."
+    ],
+    "items": [
+      [
+        "בחינת מסמכים ונתונים הנוגעים למחלוקת",
+        "ניתוח הסוגיות החשבונאיות והכלכליות",
+        "ניהול ההליך המקצועי במסגרת שנקבעה עם הצדדים"
+      ],
+      [
+        "Reviewing documents and data relevant to the dispute",
+        "Analysing accounting and economic questions",
+        "Conducting the agreed professional process"
+      ]
+    ],
+    "output": [
+      "הליך גישור או בוררות לפי המינוי וההסכמות; לכל הליך מסגרת ותוצאה שונות.",
+      "Mediation or arbitration according to the appointment and agreement; each process has a different framework and outcome."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "valuation",
+    "group": 2,
+    "title": [
+      "הערכות שווי ועבודות כלכליות",
+      "Valuations & economic analysis"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד",
+      "The firm's Economic Advisory Department"
+    ],
+    "intro": [
+      "המחלקה הכלכלית במשרד מכינה הערכות שווי וניתוחים כלכליים בהתאם למטרת העבודה. הניתוח נשען על מידע פיננסי, מאפייני הפעילות והנחות מפורשות, תוך בחירת שיטת עבודה מתאימה.",
+      "Our Economic Advisory Department prepares valuations and economic analysis tailored to the assignment, using financial information, business characteristics and explicit assumptions to select an appropriate method."
+    ],
+    "items": [
+      [
+        "ניתוח דוחות ותוצאות מייצגות של הפעילות",
+        "בחירת שיטות הערכה ובניית חישובים",
+        "בחינת הנחות ורגישויות והצגת מגבלות"
+      ],
+      [
+        "Analysing financial statements and representative performance",
+        "Selecting valuation methods and building calculations",
+        "Reviewing assumptions, sensitivities and limitations"
+      ]
+    ],
+    "output": [
+      "מסמך הערכת שווי או עבודה כלכלית למטרה שהוגדרה בהתקשרות.",
+      "A valuation or economic report for the agreed purpose."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "feasibility",
+    "group": 2,
+    "title": [
+      "בדיקות כדאיות וניתוח עסק",
+      "Business feasibility & analysis"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד",
+      "The firm's Economic Advisory Department"
+    ],
+    "intro": [
+      "המחלקה הכלכלית במשרד בוחנת את הכדאיות של פעילות, השקעה או מהלך עסקי. העבודה משלבת ניתוח הכנסות ועלויות, צורכי מימון ותרחישים, כדי להציג להנהלה את המשמעות הכלכלית של החלופות.",
+      "Our Economic Advisory Department examines the feasibility of a business, investment or proposed transaction through revenue and cost analysis, funding needs and scenarios."
+    ],
+    "items": [
+      [
+        "בניית הנחות ותחזיות הכנסות והוצאות",
+        "בחינת רווחיות, נקודת איזון וצורכי מימון",
+        "השוואת חלופות וניתוח רגישות לשינויים בהנחות"
+      ],
+      [
+        "Developing assumptions and revenue and cost forecasts",
+        "Reviewing profitability, break-even and financing needs",
+        "Comparing alternatives and testing sensitivity to assumptions"
+      ]
+    ],
+    "output": [
+      "ניתוח כלכלי של החלופות והסיכונים על בסיס המידע וההנחות שנבדקו.",
+      "Economic analysis of alternatives and risks based on the reviewed information and assumptions."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "budget",
+    "group": 2,
+    "title": [
+      "תקציב, ביצוע ותזרים מזומנים",
+      "Budget, actuals & cash flow"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד",
+      "The firm's Economic Advisory Department"
+    ],
+    "intro": [
+      "המחלקה הכלכלית במשרד בונה תקציב לשנה קדימה ותחזית תזרים מזומנים, ומבצעת מעקב אחר התוצאות בפועל מול התחזיות. הניתוח מפריד בין רווחיות לבין תנועת המזומנים ומאפשר לבחון את מקורות הפערים.",
+      "Our Economic Advisory Department builds an annual budget and cash-flow forecast, then tracks actual performance against the plan. The analysis distinguishes profitability from cash movements and examines the causes of variances."
+    ],
+    "items": [
+      [
+        "הכנת תקציב שנתי לפי תחומי הפעילות והנחות ההנהלה",
+        "בניית תחזית תזרים הכוללת תקבולים, תשלומים וצורכי מימון",
+        "מעקב חודשי אחר תקציב מול ביצוע והסבר סטיות"
+      ],
+      [
+        "Preparing an annual budget by activity and management assumptions",
+        "Forecasting receipts, payments and financing needs",
+        "Monthly budget-versus-actual monitoring and variance explanations"
+      ]
+    ],
+    "output": [
+      "תקציב שנתי, תחזית תזרים ודוחות מעקב בהתאם להיקף שסוכם.",
+      "An annual budget, cash-flow forecast and monitoring reports within the agreed scope."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות · עמותות",
+      "Companies · Self-employed · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "encouragement",
+    "group": 2,
+    "title": [
+      "חוק עידוד השקעות הון",
+      "Investment encouragement incentives"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד, בשיתוף המחלקה הכלכלית",
+      "Tax, together with Economic Advisory"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד בוחנת את תחולת המסלולים הרלוונטיים בחוק עידוד השקעות הון על פעילות החברה. הבדיקה נעשית לפי נתוני הפעילות, התנאים החלים ושנת המס הנבחנת.",
+      "Our Tax Department reviews whether relevant investment encouragement incentive routes may apply to a company's activity, considering business facts, applicable conditions and the tax year."
+    ],
+    "items": [
+      [
+        "מיפוי הפעילות והתנאים הרלוונטיים",
+        "ניתוח כלכלי ומיסויי של מסלולים אפשריים",
+        "סיוע בהכנת נתונים ודיווחים במסגרת ההתקשרות"
+      ],
+      [
+        "Mapping the business and relevant conditions",
+        "Economic and tax analysis of potential routes",
+        "Assisting with supporting information and reporting within scope"
+      ]
+    ],
+    "output": [
+      "בחינה מקצועית של המסלול והדרישות; זכאות והטבות תלויות בעמידה בתנאים.",
+      "Professional assessment of the route and requirements; eligibility depends on satisfying the conditions."
+    ],
+    "clients": [
+      "חברות",
+      "Companies"
+    ]
+  },
+  {
+    "id": "technology",
+    "group": 2,
+    "title": [
+      "שימוש בטכנולוגיה חדשה",
+      "Technology, models & automation"
+    ],
+    "department": [
+      "המחלקה הכלכלית במשרד, בשיתוף צוותי החשבונאות",
+      "Economic Advisory, together with the Accounting teams"
+    ],
+    "intro": [
+      "המשרד משתמש בתוכנות מתקדמות, בכלי בינה מלאכותית ובאוטומציות כחלק מהעבודה המקצועית. המחלקה הכלכלית בונה מודלים פיננסיים מורכבים באקסל ותהליכים שמסייעים לארגן נתונים, לבצע חישובים ולהכין ניתוחים.",
+      "The firm uses advanced software, AI tools and automation in its professional work. Our Economic Advisory Department builds complex Excel financial models and workflows for organising data, calculations and analysis."
+    ],
+    "items": [
+      [
+        "מודלים פיננסיים באקסל לתכנון, ניתוח ותחזיות",
+        "אוטומציה של קליטת נתונים וחישובים חוזרים בהתאם לפרויקט",
+        "שילוב כלי בינה מלאכותית עם בדיקה מקצועית של התוצרים"
+      ],
+      [
+        "Excel models for planning, analysis and forecasting",
+        "Project-specific automation of data intake and recurring calculations",
+        "AI-assisted work with professional review of outputs"
+      ]
+    ],
+    "output": [
+      "מודל או תהליך מוגדר, עם הנחות וחישובים שניתן לבחון; ההיקף נקבע לפי הצורך.",
+      "A defined model or workflow with reviewable assumptions and calculations, scoped to the need."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות · עמותות",
+      "Companies · Self-employed · Partnerships · Nonprofits"
+    ]
+  },
+  {
+    "id": "tax",
+    "group": 3,
+    "title": [
+      "ייעוץ ותכנון מס",
+      "Tax advice & planning"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד מלווה חברות ויחידים בבחינת השלכות מס ובהיערכות לדיווח. העבודה כוללת מיפוי נתונים, בחינת חלופות והטבות אפשריות, ותכנון בהתאם לדין ולנסיבות הלקוח.",
+      "Our Tax Department advises companies and individuals on tax implications and reporting, reviewing facts, alternatives and potential relief in accordance with applicable law and client circumstances."
+    ],
+    "items": [
+      [
+        "בחינת היבטי המס של פעילות ושל מהלכים עסקיים",
+        "תכנון מס ובדיקת הטבות רלוונטיות",
+        "דוחות שנתיים לחברות, לעוסקים ולבעלי שליטה"
+      ],
+      [
+        "Reviewing tax aspects of activities and business decisions",
+        "Tax planning and assessing relevant relief",
+        "Annual tax returns for companies, businesses and controlling shareholders"
+      ]
+    ],
+    "output": [
+      "ניתוח והמלצות מקצועיות ודיווחים בהתאם לנושא ולהיקף ההתקשרות.",
+      "Professional analysis, recommendations and reporting within the agreed scope."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "capital",
+    "group": 3,
+    "title": [
+      "דוחות אישיים והצהרות הון",
+      "Individual returns & capital declarations"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד מכינה דוחות שנתיים ליחידים והצהרות הון. הטיפול כולל איסוף נתוני הכנסות, נכסים והתחייבויות ובחינת ההתאמה בין המידע לבין המסמכים שנמסרו.",
+      "Our Tax Department prepares individual annual returns and capital declarations, compiling income, asset and liability information and reviewing supporting documentation."
+    ],
+    "items": [
+      [
+        "ריכוז הכנסות, אישורים ונתונים רלוונטיים לדוח השנתי",
+        "עריכת הצהרת נכסים והתחייבויות לפי הדרישה",
+        "בדיקת נתונים והשוואת הון כאשר נדרש"
+      ],
+      [
+        "Compiling income, certificates and annual return information",
+        "Preparing the required assets and liabilities declaration",
+        "Reviewing information and capital comparisons where needed"
+      ]
+    ],
+    "output": [
+      "דוח שנתי או הצהרת הון המבוססים על המידע והאסמכתאות שנבדקו.",
+      "An annual return or capital declaration based on the reviewed information and evidence."
+    ],
+    "clients": [
+      "עצמאים · בעלי שליטה · יחידים",
+      "Self-employed · Controlling shareholders · Individuals"
+    ]
+  },
+  {
+    "id": "representation",
+    "group": 3,
+    "title": [
+      "דיוני שומות וייצוג מול רשויות המס",
+      "Tax assessments & representation"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד מייצגת לקוחות מול רשויות המס ומלווה דיוני שומות. העבודה כוללת לימוד התיק, ריכוז המסמכים והצגת העמדה המקצועית בהתאם לסוג ההליך.",
+      "Our Tax Department represents clients before tax authorities and supports assessment discussions by reviewing the file, compiling evidence and presenting the professional position relevant to the process."
+    ],
+    "items": [
+      [
+        "בחינת דרישות הרשות והנתונים שדווחו",
+        "הכנת הסברים, חישובים ואסמכתאות",
+        "ייצוג בדיונים ומעקב אחר הטיפול במסגרת ההתקשרות"
+      ],
+      [
+        "Reviewing authority requests and reported information",
+        "Preparing explanations, calculations and evidence",
+        "Representation in discussions and engagement-specific follow-up"
+      ]
+    ],
+    "output": [
+      "טיפול מקצועי בתיק ובהליך הרלוונטי; התוצאה תלויה בעובדות ובבחינת הרשות.",
+      "Professional handling of the relevant file and process; the outcome depends on the facts and authority review."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "international",
+    "group": 3,
+    "title": [
+      "מיסוי בינלאומי ושינויי מבנה",
+      "International tax & restructurings"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד בוחנת היבטי מס בפעילות חוצת גבולות ובשינויי מבנה עסקיים. הבדיקה מותאמת למבנה ההחזקות, לאופי הפעילות ולמדינות המעורבות, ובמידת הצורך דורשת תיאום עם יועצים מקומיים.",
+      "Our Tax Department reviews tax aspects of cross-border activity and business restructurings, considering ownership, operations and jurisdictions, with local advisers involved where needed."
+    ],
+    "items": [
+      [
+        "מיפוי מבנה הפעילות והשלכות המס האפשריות",
+        "בחינת חלופות לשינוי מבנה ותנאים רלוונטיים",
+        "היערכות לדיווחים ולתיעוד בהתאם למקרה"
+      ],
+      [
+        "Mapping the structure and potential tax implications",
+        "Assessing restructuring alternatives and applicable conditions",
+        "Preparing for case-specific reporting and documentation"
+      ]
+    ],
+    "output": [
+      "ניתוח מס וחלופות פעולה בהתאם לנתוני המקרה ולהיקף שסוכם.",
+      "A tax analysis and alternatives tailored to the facts and agreed scope."
+    ],
+    "clients": [
+      "חברות · עצמאים · שותפויות",
+      "Companies · Self-employed · Partnerships"
+    ]
+  },
+  {
+    "id": "retained",
+    "group": 3,
+    "title": [
+      "חברות ארנק ורווחים כלואים",
+      "Closely held companies & retained earnings"
+    ],
+    "department": [
+      "מחלקת המיסים במשרד",
+      "The firm's Tax Department"
+    ],
+    "intro": [
+      "מחלקת המיסים במשרד בוחנת את השלכות הוראות המס הנוגעות לחברות ארנק ולרווחים לא מחולקים. העבודה נשענת על נתוני החברה ובעלי המניות ועל ההוראות החלות בשנת המס הרלוונטית.",
+      "Our Tax Department reviews rules concerning closely held personal-service companies and undistributed earnings, based on company and shareholder facts and the rules applicable to the relevant tax year."
+    ],
+    "items": [
+      [
+        "מיפוי מקורות ההכנסה, מבנה הפעילות והיתרות",
+        "בחינת תחולת ההוראות והשלכות אפשריות",
+        "ניתוח חלופות ודיווחים נדרשים בהתאם לנסיבות"
+      ],
+      [
+        "Mapping income sources, operations and balances",
+        "Assessing the application and potential implications of the rules",
+        "Analysing alternatives and reporting requirements"
+      ]
+    ],
+    "output": [
+      "בחינה פרטנית וחישובים לפי הנתונים והדין הרלוונטיים, ללא הנחת תחולה אוטומטית.",
+      "An individual assessment and calculations based on the relevant facts and rules, without assuming automatic applicability."
+    ],
+    "clients": [
+      "חברות · בעלי שליטה",
+      "Companies · Controlling shareholders"
+    ]
+  }
+]
