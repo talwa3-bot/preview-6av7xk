@@ -13,7 +13,7 @@
   const t = TEL[bar.dataset.branch] || TEL['petah-tikva'];
   const call = bar.querySelector('a[data-call]') || bar.querySelector('a[href^="tel:"]');
   if (call) {
-    call.href='tel:' + t[0];
+    call.href = 'tel:' + t[0];
     /* WCAG 2.5.3 label-in-name: the accessible name STARTS with the visible text ("התקשרו").
        v4.4: no phone digits in the name either (Tal's rule; gates.py checks aria-labels too). */
     const vis = call.textContent.replace(/\s+/g, ' ').trim();
