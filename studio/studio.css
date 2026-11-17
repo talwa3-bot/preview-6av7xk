@@ -1,18 +1,14 @@
 @font-face{font-family:Manrope;src:url(manrope-regular.ttf) format('truetype');font-style:normal;font-weight:400 600;font-display:swap}
 @font-face{font-family:Manrope;src:url(manrope-bold.ttf) format('truetype');font-style:normal;font-weight:700 900;font-display:swap}
-@font-face{font-family:FrankRuhl;src:url(frank-ruhl-medium.ttf) format('truetype');font-style:normal;font-weight:400 600;font-display:swap}
-
-@font-face{font-family:FrankRuhl;src:url(frank-ruhl-bold.ttf) format('truetype');font-style:normal;font-weight:700 900;font-display:swap}
-
 @font-face{font-family:Heebo;src:url(heebo-regular.ttf) format('truetype');font-style:normal;font-weight:400 600;font-display:swap}
 
 @font-face{font-family:Heebo;src:url(heebo-bold.ttf) format('truetype');font-style:normal;font-weight:700 900;font-display:swap}
 
-:root{--ink:#0B2735;--deep:#061A24;--navy:#143547;--blue:#2559AD;--pale:#F4F7FA;--ice:#EAF0F6;--line:#CBD7E4;--muted:#43546A;--sky:#8FB4EA;--white:#fff;--gutter:clamp(22px,5vw,88px);--ease:cubic-bezier(.2,.7,.2,1);--header:124px;--display:FrankRuhl,Georgia,serif}
+:root{--ink:#0B2735;--deep:#061A24;--navy:#143547;--blue:#2559AD;--pale:#F4F7FA;--ice:#EAF0F6;--line:#CBD7E4;--muted:#43546A;--sky:#8FB4EA;--white:#fff;--gutter:clamp(22px,5vw,88px);--ease:cubic-bezier(.2,.7,.2,1);--header:124px;--text:Heebo,Arial,sans-serif;--display:var(--text)}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 24px)}
-body{margin:0;font-family:Heebo,Arial,sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--text);color:var(--ink);background:var(--white);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit}
 button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 button,a{touch-action:manipulation}
@@ -495,7 +491,7 @@ h2{font-size:43px}
 .form-status{scroll-margin-bottom:100px}
 }
 
-html[lang=en]{--display:Manrope,Arial,sans-serif}html[lang=en] body{font-family:Manrope,Arial,sans-serif}html[lang=en] .hero h1{font-size:clamp(29px,3.8vw,59px);letter-spacing:-.05em;white-space:normal}
+html[lang=en]{--text:Manrope,Arial,sans-serif;--display:var(--text)}html[lang=en] body{font-family:var(--text)}html[lang=en] .hero h1{font-size:clamp(29px,3.8vw,59px);letter-spacing:-.05em;white-space:normal}
 html[lang=en] .hero h1 span:first-child{max-width:10em}
 html[lang=en] .english-name{display:none}
 html[lang=en] h2{letter-spacing:-.04em}

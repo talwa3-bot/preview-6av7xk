@@ -4,6 +4,19 @@
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
   const en = document.documentElement.lang === 'en';
   const t = (he, english) => en ? english : he;
+  const fontOptions = { noto: 'Noto Sans Hebrew', rubik: 'Rubik', plex: 'IBM Plex Sans Hebrew' };
+  const previewFontKey = new URLSearchParams(location.search).get('type');
+  if (Object.hasOwn(fontOptions, previewFontKey)) {
+    const family = fontOptions[previewFontKey];
+    const sheet = document.createElement('link');
+    sheet.rel = 'stylesheet';
+    sheet.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:wght@400;600;700&display=swap`;
+    document.head.append(sheet);
+    document.documentElement.style.setProperty('--text', `"${family}", Heebo, Arial, sans-serif`);
+    document.documentElement.style.setProperty('--display', `"${family}", Heebo, Arial, sans-serif`);
+    const languageLink = document.querySelector('.language');
+    if (languageLink) languageLink.href += `?type=${previewFontKey}`;
+  }
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   let userReduce = false;
   try { userReduce = localStorage.getItem('hw-motion') === 'reduce'; } catch {}
