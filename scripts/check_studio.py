@@ -51,7 +51,7 @@ for filename in (p.name for p in OUT.glob('*.html')):
         assert 'hero-glass-' not in text
         assert text.count('class="branch-map"') == 2
         assert len(re.findall(r'<img[^>]+src="../assets/logo-full.png"',text))==1, 'Logo must appear exactly once on each main page'
-        assert 'assistant-variable.ttf' in text
+        assert 'assistant-variable.woff2' in text
         assert 'id="service-search"' in text
         assert 'id="no-services"' in text
         assert '../privacy.html' not in text and '../accessibility.html' not in text
