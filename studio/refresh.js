@@ -51,3 +51,33 @@
     document.querySelectorAll('#partners .partner-card').forEach(c => io.observe(c));
   }
 })();
+
+(() => {
+  // "who are you?": highlights matching departments and presses the existing client filter below
+  const chips = [...document.querySelectorAll('.persona-chip')], tiles = document.querySelector('.hero-departments');
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    const on = chip.getAttribute('aria-pressed') !== 'true', who = chip.dataset.client;
+    chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    chip.setAttribute('aria-pressed', String(on));
+    if (tiles) {
+      tiles.classList.toggle('filtered', on);
+      tiles.querySelectorAll('.dept-tile').forEach(t => t.classList.toggle('match', on && (t.dataset.for || '').split(' ').includes(who)));
+    }
+    document.querySelectorAll('.client-button').forEach(b => {
+      const pressed = b.getAttribute('aria-pressed') === 'true', want = on && b.dataset.client === who;
+      if (pressed !== want) b.click();
+    });
+  }));
+
+  // red reading thread
+  const thread = document.createElement('div'); thread.className = 'read-thread'; thread.setAttribute('aria-hidden', 'true'); thread.innerHTML = '<i></i>';
+  document.body.append(thread);
+  const bar = thread.firstChild;
+  const onScroll = () => { const h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty('--p', h > 0 ? (scrollY / h).toFixed(3) : 0); };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // tap feedback on touch screens
+  if (!matchMedia('(pointer:fine)').matches) document.querySelectorAll('.button,.persona-chip,.dept-tile,.mobile-bar a').forEach(el => {
+    el.addEventListener('pointerdown', () => { el.classList.remove('tap-flash'); void el.offsetWidth; el.classList.add('tap-flash'); });
+  });
+})();

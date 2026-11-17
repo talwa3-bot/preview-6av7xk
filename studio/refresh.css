@@ -212,3 +212,40 @@ html[dir=ltr] .text-link{background-position:0 100%}
 }
 html.reduced-motion .hero-aurora i,html.reduced-motion .hero-grid:after,html.reduced-motion .marquee-track,html.reduced-motion .financial-demo:before,html.reduced-motion .button:before,html.reduced-motion .hero-check path{animation:none!important}
 html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
+
+/* ---------- "who are you?" in the hero ---------- */
+.persona{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.persona p{width:100%;text-align:center;font-size:14px;font-weight:700;color:var(--brand);margin:0 0 2px}
+.persona-chip{min-height:44px;padding:8px 20px;border-radius:999px;border:1px solid var(--line);background:#ffffffcc;color:var(--navy-2);font-weight:600;font-size:15px;transition:background .3s,color .3s,box-shadow .3s}
+.persona-chip:hover{box-shadow:0 0 0 1.5px var(--neon),0 0 14px -2px #4C95FF99}
+.persona-chip[aria-pressed=true]{background:var(--navy-2);color:#fff;border-color:var(--navy-2);box-shadow:0 0 0 1.5px var(--neon),0 0 16px -2px #4C95FF99}
+.hero-departments.filtered .dept-tile:not(.match){opacity:.35;filter:saturate(.4)}
+.hero-departments.filtered .dept-tile.match{box-shadow:0 0 0 2px var(--neon),0 0 26px -6px #4C95FF}
+.hero-departments .dept-tile{transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out),opacity .4s,filter .4s}
+
+/* ---------- services: departments as a slim row of tags, not a second set of boxes ---------- */
+.department-nav{display:flex!important;flex-wrap:wrap;gap:8px;grid-template-columns:none!important}
+.department-nav .dept-tab{display:inline-flex!important;align-items:center;width:auto!important;min-height:44px!important;padding:8px 18px!important;border:1px solid var(--line)!important;border-radius:999px!important;font-size:15px!important;background:#fff;grid-template-columns:none!important}
+.department-nav .dept-tab .tab-count,.department-nav .dept-tab svg{display:none!important}
+.department-nav .dept-tab .tab-title{font-size:15px!important}
+.department-nav .dept-tab[aria-selected=true],.department-nav .dept-tab.active,.department-nav .dept-tab[aria-pressed=true]{background:var(--navy-2)!important;color:#fff!important;border-color:var(--navy-2)!important}
+
+/* ---------- short form ---------- */
+.form-more{margin-top:18px;border-top:1px solid var(--line)}
+.form-more>summary{min-height:52px;font-size:15px;font-weight:600;color:var(--brand)}
+.form-more>.form-grid{padding-top:12px}
+
+/* ---------- chart: the month you point at stays lit ---------- */
+.chart-bars:hover .bar-pair:not(:hover){opacity:.35}
+.chart-bars .bar-pair{transition:opacity .25s}
+
+/* ---------- a red thread fills down the side as you read ---------- */
+.read-thread{position:fixed;top:0;bottom:0;inset-inline-start:0;width:3px;z-index:90;pointer-events:none}
+.read-thread i{display:block;height:100%;background:linear-gradient(var(--red),#ff6b72);transform-origin:top;transform:scaleY(var(--p,0))}
+
+/* ---------- touch: a short neon flash on tap ---------- */
+.tap-flash{animation:tapflash .5s ease-out}
+@keyframes tapflash{0%{box-shadow:0 0 0 0 #4C95FF}100%{box-shadow:0 0 0 14px #4C95FF00}}
+@media (prefers-reduced-motion:reduce){.tap-flash{animation:none}}
+.reading-progress{display:none!important}
+.department-nav .dept-tab[aria-selected=true] .tab-title,.department-nav .dept-tab[aria-selected=true]{color:#fff!important}
