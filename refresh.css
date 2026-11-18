@@ -267,3 +267,9 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
 .hero-departments a.dept-tile .dept-ic{stroke:#0B2735}
 .hero-departments a.dept-tile .dept-count{background:#0B273514!important}
 .hero-departments a.dept-tile:before{background:radial-gradient(240px circle at var(--mx,120%) var(--my,120%),#ffffffb3,transparent 65%)!important}
+
+/* phones: service name and department both start from the right edge */
+@media (max-width:640px){
+  .service-title{align-items:stretch!important;width:100%}
+  .service-name,.service-department{text-align:start!important;align-self:stretch;max-width:none!important}
+}
