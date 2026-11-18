@@ -273,3 +273,65 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
   .service-title{align-items:stretch!important;width:100%}
   .service-name,.service-department{text-align:start!important;align-self:stretch;max-width:none!important}
 }
+
+/* no red check in the hero */
+.hero-check{display:none!important}
+
+/* ---------- economic advisory dashboard: one card, four tabs ---------- */
+:root{--c-rev:#2559AD;--c-cash:#0E9F8E;--c-fc:#6B5BD6;--c-pf:#D9822B;--c-up:#12A150;--c-down:#D23B3B}
+.financial-demo .demo-label i{background:linear-gradient(135deg,#4C95FF,#0E9F8E)!important}
+.financial-demo .demo-controls{display:flex!important;flex-wrap:wrap;gap:8px;border:0!important;margin-top:14px}
+.financial-demo .demo-tab,.financial-demo .model-tab{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px!important;border-radius:999px!important;border:1px solid #d5dfea!important;background:#fff!important;color:#0B2735!important;font:600 14px var(--text)!important;cursor:pointer;transition:background .3s,color .3s,box-shadow .3s;margin:0!important}
+.financial-demo .demo-tab:before,.financial-demo .model-tab:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--dot)}
+.financial-demo [data-metric=revenue]{--dot:var(--c-rev)}
+.financial-demo [data-metric=cash]{--dot:var(--c-cash)}
+.financial-demo [data-panel=cash-flow-model]{--dot:var(--c-fc)}
+.financial-demo [data-panel=pro-forma-model]{--dot:var(--c-pf)}
+.financial-demo .demo-tab.active,.financial-demo .demo-tab[aria-pressed=true],.financial-demo .model-tab[aria-pressed=true]{background:var(--dot)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 20px -10px var(--dot)}
+.financial-demo .demo-tab.active:before,.financial-demo .demo-tab[aria-pressed=true]:before,.financial-demo .model-tab[aria-pressed=true]:before{background:#fff}
+.financial-demo .demo-tab:after{display:none!important}
+.financial-demo.show-model .demo-tab{background:#fff!important;color:#0B2735!important;box-shadow:none}
+.financial-demo.show-model .demo-tab:before{background:var(--dot)}
+
+/* KPI cards */
+.financial-demo .demo-numbers{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;border:0!important}
+.financial-demo .demo-numbers>div{border-radius:16px;padding:14px 16px!important;background:#F2F6FB;border:0!important}
+.financial-demo .demo-numbers>div:nth-child(2){background:linear-gradient(150deg,#EAF2FF,#DCE9FD)}
+.financial-demo .demo-numbers>div:nth-child(3){background:#EAF7F0}
+.financial-demo .demo-numbers>div:nth-child(3) strong{color:var(--c-up)!important}
+.financial-demo.neg .demo-numbers>div:nth-child(3){background:#FCEDED}
+.financial-demo.neg .demo-numbers>div:nth-child(3) strong{color:var(--c-down)!important}
+.financial-demo .demo-numbers strong{font-weight:800!important}
+
+/* bars: planned soft, actual in the active colour */
+.financial-demo .bar.planned{background:repeating-linear-gradient(135deg,#C9D6E6 0 6px,#DCE5F0 6px 12px)!important}
+.financial-demo .bar.actual{background:linear-gradient(180deg,var(--bar,#4C95FF),var(--bar2,#2559AD))!important;border-radius:6px 6px 0 0}
+.financial-demo .bar{border-radius:6px 6px 0 0}
+.financial-demo.metric-cash{--bar:#2CC4B0;--bar2:#0E9F8E}
+.financial-demo .chart-legend span:last-child i{background:linear-gradient(180deg,var(--bar,#4C95FF),var(--bar2,#2559AD))!important}
+.financial-demo .chart-legend span:first-child i{background:#C9D6E6!important}
+
+/* insight with a badge */
+.financial-demo .demo-insight{position:relative;padding:14px 16px 14px 16px!important;border-radius:14px;background:linear-gradient(135deg,#F3F0FF,#EAF6FF);border:0!important}
+.financial-demo .demo-insight:before{content:"תובנה";display:inline-block;margin-inline-end:8px;padding:2px 10px;border-radius:999px;background:linear-gradient(135deg,#6B5BD6,#2559AD);color:#fff;font-size:12px;font-weight:700}
+html[lang=en] .financial-demo .demo-insight:before{content:"Insight"}
+
+/* models live inside the card */
+.financial-demo .model-lab{margin:18px 0 0!important;padding:0!important;border:0!important;grid-column:auto}
+.financial-demo .model-lab-heading,.financial-demo .model-panel>summary{display:none!important}
+.financial-demo .model-lab-grid{display:block!important}
+.financial-demo .model-panel{border:0!important;background:transparent!important;border-radius:0}
+.financial-demo .model-panel[hidden]{display:none!important}
+.financial-demo .model-content{padding:0!important}
+.financial-demo:not(.show-model) .model-lab{display:none!important}
+.financial-demo.show-model .demo-view{display:none!important}
+.financial-demo #cash-flow-model{--acc:var(--c-fc)}
+.financial-demo #pro-forma-model{--acc:var(--c-pf)}
+.financial-demo .model-result{border:0!important;margin:14px 0!important;padding:18px 20px!important;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 14%,#fff),#fff)}
+.financial-demo .model-result strong{color:var(--acc)!important;font-weight:800!important}
+.financial-demo .model-inputs output{color:var(--acc)!important}
+.financial-demo .model-inputs input[type=range]{accent-color:var(--acc)}
+.financial-demo .model-assumptions{border-inline-start-color:var(--acc)!important;border-radius:0 12px 12px 0}
+.financial-demo .model-table-scroll table th[scope=col]{color:var(--acc)}
+@media (max-width:640px){.financial-demo .demo-numbers{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.financial-demo .demo-numbers>div{padding:10px!important}.financial-demo .model-inputs{grid-template-columns:minmax(0,1fr)!important}}
+.financial-demo.show-model .demo-tab{border-color:#d5dfea!important}
