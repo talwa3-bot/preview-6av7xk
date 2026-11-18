@@ -108,6 +108,42 @@
   ]
  },
  {
+  "id": "internal-audit",
+  "group": 0,
+  "title": [
+   "ביקורת פנימית",
+   "Internal audit"
+  ],
+  "department": [
+   "מחלקת הביקורת והחשבונאות במשרד",
+   "The firm's Audit and Accounting Department"
+  ],
+  "intro": [
+   "מחלקת הביקורת במשרד מבצעת ביקורת פנימית לחברות, לעמותות ולגופים נוספים, לפי תוכנית עבודה שמאושרת מול ההנהלה או ועדת הביקורת. הביקורת בוחנת תהליכים, בקרות ועמידה בנהלים, ומציגה ממצאים והמלצות לשיפור.",
+   "The firm's Audit Department performs internal audits for companies, nonprofits and other organisations under a work plan agreed with management or the audit committee, reviewing processes, controls and compliance, and presenting findings and recommendations."
+  ],
+  "items": [
+   [
+    "בניית תוכנית ביקורת לפי סקר סיכונים",
+    "בדיקת תהליכים, בקרות ועמידה בנהלים",
+    "דוח ממצאים והמלצות, ומעקב אחר תיקון הליקויים"
+   ],
+   [
+    "Building an audit plan based on a risk survey",
+    "Reviewing processes, controls and compliance with procedures",
+    "A findings report with recommendations, and follow-up on corrective actions"
+   ]
+  ],
+  "output": [
+   "דוחות ביקורת פנימית והמלצות, בהתאם לתוכנית העבודה שסוכמה.",
+   "Internal audit reports and recommendations, in line with the agreed work plan."
+  ],
+  "clients": [
+   "חברות · שותפויות · עמותות",
+   "Companies · Partnerships · Nonprofits"
+  ]
+ },
+ {
   "id": "opinions",
   "group": 0,
   "title": [
