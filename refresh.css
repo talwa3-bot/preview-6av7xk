@@ -257,3 +257,4 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
 /* no blue light behind the logo */
 .logo-aura,.hero-aurora{display:none!important}
 .hero-grid:after{display:none!important}
+.hero-grid{display:none!important}
