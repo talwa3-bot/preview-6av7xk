@@ -249,3 +249,11 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
 @media (prefers-reduced-motion:reduce){.tap-flash{animation:none}}
 .reading-progress{display:none!important}
 .department-nav .dept-tab[aria-selected=true] .tab-title,.department-nav .dept-tab[aria-selected=true]{color:#fff!important}
+
+/* light department tiles: dark text everywhere inside them */
+.hero-departments a.dept-tile-2,.hero-departments a.dept-tile-2 *,.hero-departments a.dept-tile-3,.hero-departments a.dept-tile-3 *{color:#0B2735!important}
+.hero-departments a.dept-tile-2 .dept-ic,.hero-departments a.dept-tile-3 .dept-ic{stroke:#0B2735}
+
+/* no blue light behind the logo */
+.logo-aura,.hero-aurora{display:none!important}
+.hero-grid:after{display:none!important}
