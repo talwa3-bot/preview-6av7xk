@@ -258,3 +258,4 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
 .logo-aura,.hero-aurora{display:none!important}
 .hero-grid:after{display:none!important}
 .hero-grid{display:none!important}
+.contact-form .form-title{font-size:clamp(30px,3.4vw,44px)!important;font-weight:800!important;line-height:1.1;color:var(--night)}
