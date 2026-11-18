@@ -19,7 +19,7 @@ class Page(HTMLParser):
     def handle_data(self,data):self.data.append(data)
 
 services=json.loads((OUT/'services.json').read_text())
-assert len(services)==28
+assert len(services)==29
 assert len({s['id'] for s in services})==len(services)
 for s in services:
     for field in ('title','department','intro','output','clients'):
@@ -64,4 +64,4 @@ for path, expected in json.loads((ROOT/'scripts/brand-integrity.json').read_text
     assert actual == expected, f'Protected original asset changed: {path}'
 assert 'font-family:OfficeSans' in (OUT/'studio.css').read_text()
 assert 'FrankRuhl' not in (OUT/'studio.css').read_text()
-print('PASS: all HTML pages, 28 bilingual services, original logo/portraits, one founding year, excluded phrases, local links, font and no-JS form guards.')
+print('PASS: all HTML pages, 29 bilingual services, original logo/portraits, one founding year, excluded phrases, local links, font and no-JS form guards.')
