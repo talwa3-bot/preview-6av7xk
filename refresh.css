@@ -259,3 +259,11 @@ html.reduced-motion .section-label .tick path{stroke-dashoffset:0!important}
 .hero-grid:after{display:none!important}
 .hero-grid{display:none!important}
 .contact-form .form-title{font-size:clamp(30px,3.4vw,44px)!important;font-weight:800!important;line-height:1.1;color:var(--night)}
+
+/* all four department tiles: light blues with dark text */
+.hero-departments a.dept-tile-0{background:linear-gradient(155deg,#DCE8F8 0%,#C3D7F3 60%,#AFCAF0 100%)!important}
+.hero-departments a.dept-tile-1{background:linear-gradient(160deg,#EEF3FA,#DDE8F6)!important;box-shadow:inset 0 0 0 1px #d5dfea}
+.hero-departments a.dept-tile,.hero-departments a.dept-tile *{color:#0B2735!important}
+.hero-departments a.dept-tile .dept-ic{stroke:#0B2735}
+.hero-departments a.dept-tile .dept-count{background:#0B273514!important}
+.hero-departments a.dept-tile:before{background:radial-gradient(240px circle at var(--mx,120%) var(--my,120%),#ffffffb3,transparent 65%)!important}
