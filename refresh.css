@@ -335,3 +335,14 @@ html[lang=en] .financial-demo .demo-insight:before{content:"Insight"}
 .financial-demo .model-table-scroll table th[scope=col]{color:var(--acc)}
 @media (max-width:640px){.financial-demo .demo-numbers{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.financial-demo .demo-numbers>div{padding:10px!important}.financial-demo .model-inputs{grid-template-columns:minmax(0,1fr)!important}}
 .financial-demo.show-model .demo-tab{border-color:#d5dfea!important}
+
+/* header: larger, readable type */
+.header-inner{min-height:84px!important;grid-template-columns:1fr 240px 1fr!important}
+.desktop-nav{font-size:17px!important;gap:30px!important;font-weight:500}
+.brand span:first-child{font-size:18px!important;font-weight:700!important}
+.brand span+span{font-size:15px!important}
+.header-actions{font-size:16px!important;gap:26px!important}
+.language{font-size:15px!important;font-weight:600}
+.header-contact{font-size:16px!important;font-weight:600!important;gap:14px!important}
+.header-whatsapp{font-size:16px!important;font-weight:600}
+@media (max-width:1180px){.desktop-nav{font-size:16px!important;gap:22px!important}.header-inner{grid-template-columns:1fr 200px 1fr!important}}
