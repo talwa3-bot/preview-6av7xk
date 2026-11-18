@@ -363,16 +363,16 @@
   "id": "valuation",
   "group": 2,
   "title": [
-   "הערכות שווי ועבודות כלכליות",
-   "Valuations & economic analysis"
+   "הערכות שווי",
+   "Valuations"
   ],
   "department": [
    "המחלקה הכלכלית במשרד",
    "The firm's Economic Advisory Department"
   ],
   "intro": [
-   "המחלקה הכלכלית במשרד מכינה הערכות שווי וניתוחים כלכליים בהתאם למטרת העבודה. הניתוח נשען על מידע פיננסי, מאפייני הפעילות והנחות מפורשות, תוך בחירת שיטת עבודה מתאימה.",
-   "Our Economic Advisory Department prepares valuations and economic analysis tailored to the assignment, using financial information, business characteristics and explicit assumptions to select an appropriate method."
+   "המחלקה הכלכלית במשרד מכינה הערכות שווי לחברות ולפעילויות עסקיות, בהתאם למטרת העבודה. ההערכה נשענת על מידע פיננסי, מאפייני הפעילות והנחות מפורשות, תוך בחירת שיטת הערכה מתאימה.",
+   "Our Economic Advisory Department prepares valuations of companies and businesses for the purpose of the assignment, using financial information, business characteristics and explicit assumptions to select an appropriate method."
   ],
   "items": [
    [
@@ -387,8 +387,44 @@
    ]
   ],
   "output": [
-   "מסמך הערכת שווי או עבודה כלכלית למטרה שהוגדרה בהתקשרות.",
-   "A valuation or economic report for the agreed purpose."
+   "מסמך הערכת שווי למטרה שהוגדרה בהתקשרות.",
+   "A valuation report for the agreed purpose."
+  ],
+  "clients": [
+   "חברות · עצמאים · שותפויות",
+   "Companies · Self-employed · Partnerships"
+  ]
+ },
+ {
+  "id": "economic",
+  "group": 2,
+  "title": [
+   "עבודות כלכליות",
+   "Economic analysis"
+  ],
+  "department": [
+   "המחלקה הכלכלית במשרד",
+   "The firm's Economic Advisory Department"
+  ],
+  "intro": [
+   "המחלקה הכלכלית במשרד מכינה עבודות וניתוחים כלכליים לפי מטרת ההתקשרות, כמו ניתוח רווחיות, בחינת מבנה עלויות ותמחור, וניתוח ההשפעה של מהלכים עסקיים. העבודה נשענת על מידע פיננסי והנחות מפורשות.",
+   "Our Economic Advisory Department prepares economic analyses for the purpose of the assignment, such as profitability analysis, cost structure and pricing reviews, and the impact of business moves, based on financial information and explicit assumptions."
+  ],
+  "items": [
+   [
+    "איסוף וניתוח הנתונים הפיננסיים והתפעוליים",
+    "בניית מודל וחישובים לפי שאלת העבודה",
+    "הצגת ממצאים, הנחות ומגבלות להנהלה"
+   ],
+   [
+    "Gathering and analysing financial and operating data",
+    "Building a model and calculations for the question at hand",
+    "Presenting findings, assumptions and limitations to management"
+   ]
+  ],
+  "output": [
+   "עבודה כלכלית בכתב, למטרה שהוגדרה בהתקשרות.",
+   "A written economic analysis for the agreed purpose."
   ],
   "clients": [
    "חברות · עצמאים · שותפויות",
@@ -433,34 +469,70 @@
  },
  {
   "id": "budget",
-  "group": 1,
+  "group": 2,
   "title": [
-   "תקציב מול ביצוע ותזרים מזומנים",
-   "Budget vs. actual & cash flow"
+   "תקציב מול ביצוע",
+   "Budget vs. actual"
   ],
   "department": [
    "המחלקה הכלכלית במשרד",
    "The firm's Economic Advisory Department"
   ],
   "intro": [
-   "המחלקה הכלכלית במשרד בונה תקציב לשנה קדימה ותחזית תזרים מזומנים, ומבצעת מעקב אחר התוצאות בפועל מול התחזיות. הניתוח מפריד בין רווחיות לבין תנועת המזומנים ומאפשר לבחון את מקורות הפערים.",
-   "Our Economic Advisory Department builds an annual budget and cash-flow forecast, then tracks actual performance against the plan. The analysis distinguishes profitability from cash movements and examines the causes of variances."
+   "המחלקה הכלכלית במשרד בונה עם ההנהלה תקציב שנתי, ומבצעת מעקב חודשי אחר התוצאות בפועל מול התקציב. הניתוח מסביר את מקורות הסטיות ומסייע להנהלה לקבל החלטות בזמן.",
+   "Our Economic Advisory Department builds an annual budget with management and tracks actual results against it every month, explaining the causes of variances so management can act in time."
   ],
   "items": [
    [
     "הכנת תקציב שנתי לפי תחומי הפעילות והנחות ההנהלה",
-    "בניית תחזית תזרים הכוללת תקבולים, תשלומים וצורכי מימון",
-    "מעקב חודשי אחר תקציב מול ביצוע והסבר סטיות"
+    "מעקב חודשי אחר תקציב מול ביצוע",
+    "ניתוח והסבר סטיות והצגתן להנהלה"
    ],
    [
     "Preparing an annual budget by activity and management assumptions",
-    "Forecasting receipts, payments and financing needs",
-    "Monthly budget-versus-actual monitoring and variance explanations"
+    "Monthly budget-versus-actual monitoring",
+    "Analysing and explaining variances for management"
    ]
   ],
   "output": [
-   "תקציב שנתי, תחזית תזרים ודוחות מעקב בהתאם להיקף שסוכם.",
-   "An annual budget, cash-flow forecast and monitoring reports within the agreed scope."
+   "תקציב שנתי ודוחות מעקב חודשיים בהתאם להיקף שסוכם.",
+   "An annual budget and monthly monitoring reports within the agreed scope."
+  ],
+  "clients": [
+   "חברות · עצמאים · שותפויות · עמותות",
+   "Companies · Self-employed · Partnerships · Nonprofits"
+  ]
+ },
+ {
+  "id": "cash-flow",
+  "group": 2,
+  "title": [
+   "בניית תזרים מזומנים",
+   "Cash-flow forecasting"
+  ],
+  "department": [
+   "המחלקה הכלכלית במשרד",
+   "The firm's Economic Advisory Department"
+  ],
+  "intro": [
+   "המחלקה הכלכלית במשרד בונה תחזית תזרים מזומנים הכוללת תקבולים, תשלומים וצורכי מימון, ומעדכנת אותה מול התנועות בפועל. התחזית מפרידה בין רווחיות לבין תנועת המזומנים.",
+   "Our Economic Advisory Department builds a cash-flow forecast covering receipts, payments and financing needs, and updates it against actual movements, separating profitability from cash."
+  ],
+  "items": [
+   [
+    "מיפוי מקורות התקבולים ומועדי התשלומים",
+    "בניית תחזית חודשית וזיהוי צורכי מימון",
+    "עדכון התחזית מול הביצוע בפועל"
+   ],
+   [
+    "Mapping sources of receipts and payment timing",
+    "Building a monthly forecast and identifying financing needs",
+    "Updating the forecast against actual results"
+   ]
+  ],
+  "output": [
+   "תחזית תזרים מזומנים ועדכונים תקופתיים בהתאם להיקף שסוכם.",
+   "A cash-flow forecast and periodic updates within the agreed scope."
   ],
   "clients": [
    "חברות · עצמאים · שותפויות · עמותות",

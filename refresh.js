@@ -81,3 +81,31 @@
     el.addEventListener('pointerdown', () => { el.classList.remove('tap-flash'); void el.offsetWidth; el.classList.add('tap-flash'); });
   });
 })();
+
+(() => {
+  // economic advisory dashboard: budget tabs and model tabs share one card
+  const card = document.querySelector('.financial-demo');
+  if (!card) return;
+  const metricTabs = [...card.querySelectorAll('.demo-tab')], modelTabs = [...card.querySelectorAll('.model-tab')];
+  const panels = [...card.querySelectorAll('.model-panel')];
+  const variance = () => { const v = (document.getElementById('variance-total')?.textContent || '').trim(); card.classList.toggle('neg', v.startsWith('−') || v.startsWith('-')); };
+  const showMetric = tab => {
+    card.classList.remove('show-model');
+    card.classList.toggle('metric-cash', tab.dataset.metric === 'cash');
+    modelTabs.forEach(b => b.setAttribute('aria-pressed', 'false'));
+    setTimeout(variance, 0);
+  };
+  const showModel = id => {
+    card.classList.add('show-model');
+    panels.forEach(p => { const on = p.id === id; p.hidden = !on; if (on) p.open = true; });
+    modelTabs.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.panel === id)));
+  };
+  metricTabs.forEach(t => t.addEventListener('click', () => showMetric(t)));
+  modelTabs.forEach(t => t.addEventListener('click', () => showModel(t.dataset.panel)));
+  // links that open a model (hero "see a live model", #cash-flow-model) switch the tab too
+  const fromHash = () => { if (['#cash-flow-model', '#pro-forma-model'].includes(location.hash)) showModel(location.hash.slice(1)); };
+  document.querySelectorAll('[data-open-model]').forEach(a => a.addEventListener('click', () => { showModel(a.dataset.openModel); card.scrollIntoView({ block: 'center' }); }));
+  addEventListener('hashchange', fromHash); fromHash();
+  panels.forEach(p => { p.hidden = true; });
+  variance();
+})();
